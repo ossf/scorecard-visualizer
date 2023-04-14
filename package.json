@@ -21,6 +21,10 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "format": "prettier . --loglevel silent",
+    "format:fix": "prettier . --write",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
