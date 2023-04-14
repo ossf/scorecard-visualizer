@@ -71,5 +71,6 @@
     font-weight: 500;
     font-family: monospace;
     border-radius: 0.5rem;
+    overflow-x: scroll;
   }
   
