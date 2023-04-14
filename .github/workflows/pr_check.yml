@@ -1,0 +1,21 @@
+name: pr check
+on: [pull_request]
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: installing node@18
+        uses: actions/setup-node@v2
+        with:
+          node-version: 18.16.0
+      - name: installing dependencies
+        run: npm ci
+      - name: linting
+        run: npm run lint
+      - name: formatting
+        run: npm run format
+      # - name: test
+        # run: npm run test
+      - name: build
+        run: npm run build
