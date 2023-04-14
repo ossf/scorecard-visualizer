@@ -2,6 +2,17 @@ import React from "react";
 import { useParams } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 
+interface ScoreElement {
+    name: string;
+    score: number;
+    reason: string;
+    details: string[];
+    documentation: {
+        short: string;
+        url: string;
+    }
+}
+
 function ProjectDetails(){
     const params = useParams();
     const {platform, org, repo} = params;
@@ -25,26 +36,52 @@ function ProjectDetails(){
             <p>{`An error has occurred: ${error}`}</p>
         )
     }
-    
+
     return (
         <>
-        <h1>Project Details</h1>
-        <p>{`Scoring details for: ${org}/${repo}`}</p>
-        <small>Want to check the full report? Please check{' '}
+        <h1>OpenSSF scorecard for {`${org}/${repo}`}</h1>
+        <h2>{`Score: ${data.score}/10`}</h2>
+        <p>Date: {data.date}</p>
+        <p>Scorecard version {data.scorecard.version}{' '}
+            <a href={`https://github.com/ossf/scorecard/commit/${data.scorecard.commit}`} target="_blank" rel="noreferrer">
+            {`(${data.scorecard.commit.substring(0,8)})`}
+            </a>
+        </p>
+        <p>Last analyzed commit{' '}
+            <a href={`https://github.com/${org}/${repo}/commit/${data.repo.commit}`} target="_blank" rel="noreferrer">
+            {`(${data.repo.commit.substring(0,8)})`}
+            </a>
+        </p>
+        <p>See the report at {' '}
             <a href={`https://deps.dev/project/github/${org}%2F${repo}`} target="_blank" rel="noreferrer">
             {' '}deps.dev
             </a>
-        </small>
-        <br />
-        <small>
-            {`Check also the ${org}`}
-            <a href={`https://github.com/${org}/${repo}`} target="_blank" rel="noreferrer">
-            {' '}repo
-            </a>
-        </small>
-        <pre>
-            <code>{JSON.stringify(data, null, 4)}</code>
-        </pre>
+        </p>
+        <hr />
+        {data.checks.map((element: ScoreElement) => (
+            <div key={element.name}>
+                <div>
+                    <h3>{element.name}</h3>
+                    <span>{element.score}/10</span>
+                </div>
+                <p>Description: {element.documentation.short.toLocaleLowerCase()}{' '}
+                    <a href={`${element.documentation.url}`} target="_blank" rel="noreferrer">See documentation</a>
+                </p>
+                <p>Reasoning: {element?.reason.toLocaleLowerCase()}</p>
+                {Array.isArray(element.details) &&
+                    <div>
+                        <p>Details:</p>
+                        <ul>
+                            {element.details.map((el: string, i) => (
+                                <li key={i}>
+                                {el}
+                                </li>
+                            ))}
+                        </ul>
+                    </div>                
+                }
+            </div>
+        ))}
         </>
     )
 };
