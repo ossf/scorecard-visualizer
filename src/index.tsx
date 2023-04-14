@@ -2,18 +2,28 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import {
   createBrowserRouter,
-  RouterProvider,
+  RouterProvider
 } from "react-router-dom";
 
-import App from './App';
+import NotFound from './components/NotFound';
+import Error404 from './components/Error404';
+import ProjectDetails from './components/ProjectDetails';
 import reportWebVitals from './reportWebVitals';
 import './index.css';
 
 const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <App />
-  }
+    {
+      path: "*",
+      element: <NotFound />,
+    },
+    {
+      path: "404",
+      element: <Error404 />,
+    },
+    {
+      path: "projects/:platform/:org/:repo",
+      element: <ProjectDetails />,
+    },
 ]);
 
 const root = ReactDOM.createRoot(
