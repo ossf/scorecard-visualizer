@@ -1,41 +1,35 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import {
-  createBrowserRouter,
-  RouterProvider
-} from "react-router-dom";
-import {
-  QueryClient,
-  QueryClientProvider,
-} from '@tanstack/react-query';
-import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 
-import NotFound from './components/NotFound';
-import Error404 from './components/Error404';
-import ProjectDetails from './components/ProjectDetails';
+import NotFound from "./components/NotFound";
+import Error404 from "./components/Error404";
+import ProjectDetails from "./components/ProjectDetails";
 
-import reportWebVitals from './reportWebVitals';
-import './index.css';
+import reportWebVitals from "./reportWebVitals";
+import "./index.css";
 
 const router = createBrowserRouter([
-    {
-      path: "*",
-      element: <NotFound />,
-    },
-    {
-      path: "404",
-      element: <Error404 />,
-    },
-    {
-      path: "projects/:platform/:org/:repo",
-      element: <ProjectDetails />,
-    },
+  {
+    path: "*",
+    element: <NotFound />,
+  },
+  {
+    path: "404",
+    element: <Error404 />,
+  },
+  {
+    path: "projects/:platform/:org/:repo",
+    element: <ProjectDetails />,
+  },
 ]);
 
 const queryClient = new QueryClient();
 
 const root = ReactDOM.createRoot(
-  document.getElementById('root') as HTMLElement
+  document.getElementById("root") as HTMLElement
 );
 root.render(
   <React.StrictMode>
