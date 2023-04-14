@@ -2,6 +2,7 @@ import React from "react";
 import { useParams } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 
+import './ProjectDetails.css';
 interface ScoreElement {
     name: string;
     score: number;
@@ -52,15 +53,16 @@ function ProjectDetails(){
             {`(${data.repo.commit.substring(0,8)})`}
             </a>
         </p>
-        <p>See the report at {' '}
+        <p>Additional info at {' '}
             <a href={`https://deps.dev/project/github/${org}%2F${repo}`} target="_blank" rel="noreferrer">
             {' '}deps.dev
             </a>
         </p>
         <hr />
         {data.checks.map((element: ScoreElement) => (
-            <div key={element.name}>
-                <div>
+            <>
+                <div key={element.name} className="card__wrapper">
+                <div className="heading__wrapper">
                     <h3>{element.name}</h3>
                     <span>{element.score}/10</span>
                 </div>
@@ -69,18 +71,22 @@ function ProjectDetails(){
                 </p>
                 <p>Reasoning: {element?.reason.toLocaleLowerCase()}</p>
                 {Array.isArray(element.details) &&
-                    <div>
+                    <>
                         <p>Details:</p>
-                        <ul>
-                            {element.details.map((el: string, i) => (
-                                <li key={i}>
-                                {el}
-                                </li>
-                            ))}
-                        </ul>
-                    </div>                
+                        <div className="details__wrapper">
+                            <ul>
+                                {element.details.map((el: string, i) => (
+                                    <li key={i}>
+                                    {el}
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>  
+                    </>
                 }
             </div>
+            <hr />
+            </>
         ))}
         </>
     )
