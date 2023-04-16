@@ -70,6 +70,17 @@ function ProjectDetails() {
           deps.dev
         </a>
       </p>
+      <p>
+        Improve your scoring with {" "}
+        <a
+          href={`https://app.stepsecurity.io/securerepo?repo=${org}/${repo}`}
+          target="_blank"
+          rel="noreferrer"
+        >
+          {" "}
+          StepSecurity
+        </a>
+      </p>
       <hr />
       {data.checks.map((element: ScoreElement) => (
         <>
