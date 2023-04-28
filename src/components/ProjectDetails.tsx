@@ -14,16 +14,29 @@ interface ScoreElement {
   };
 }
 
+interface paramsTypes {
+  platform: string | undefined;
+  org: string | undefined;
+  repo: string | undefined; 
+  commitHash: string | undefined;
+}
+
 function ProjectDetails() {
   const params = useParams();
-  const { platform, org, repo } = params;
+  const { platform, org, repo, commitHash } = params;
 
+  const getScorecardUrl = (params: paramsTypes) :string => {
+    let baseUrl = `https://api.securityscorecards.dev/projects/${params.platform}/${params.org}/${params.repo}`
+    if(params.commitHash){
+      baseUrl += `/?commit=${params.commitHash}`
+    }
+    return baseUrl
+  }
+  
   const { isLoading, error, data } = useQuery({
     queryKey: ["projectData"],
     queryFn: () =>
-      fetch(
-        `https://api.securityscorecards.dev/projects/${platform}/${org}/${repo}`
-      ).then((res) => res.json()),
+      fetch(getScorecardUrl({platform, org, repo, commitHash})).then((res) => res.json()),
   });
 
   if (isLoading) {
