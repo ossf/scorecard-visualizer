@@ -21,6 +21,10 @@ const router = createHashRouter([
     element: <Error404 />,
   },
   {
+    path: "projects/:platform/:org/:repo/commit/:commitHash",
+    element: <ProjectDetails />,
+  },
+  {
     path: "projects/:platform/:org/:repo",
     element: <ProjectDetails />,
   },
