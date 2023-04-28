@@ -63,7 +63,7 @@ function ProjectDetails() {
         </a>
       </p>
       <p>
-        Last analyzed commit{" "}
+        Current commit{" "}
         <a
           href={`https://github.com/${org}/${repo}/commit/${data.repo.commit}`}
           target="_blank"
