@@ -72,3 +72,9 @@ a:hover {
   border-radius: 0.5rem;
   overflow-x: scroll;
 }
+
+.score-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}

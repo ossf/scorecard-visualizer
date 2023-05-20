@@ -4,7 +4,7 @@ import { useQuery } from "@tanstack/react-query";
 import { getScorecardUrl } from "../utils/getScorecardUrl";
 import CommonError from "./CommonError";
 
-import "./ProjectDetails.css";
+import "../styles/ProjectDetails.css";
 
 interface ScoreElement {
   name: string;
