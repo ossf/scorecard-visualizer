@@ -7,6 +7,7 @@ import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import NotFound from "./components/NotFound";
 import Error404 from "./components/Error404";
 import ProjectDetails from "./components/ProjectDetails";
+import ProjectComparator from "./components/ProjectCompartor";
 
 import reportWebVitals from "./reportWebVitals";
 import "./index.css";
@@ -19,6 +20,10 @@ const router = createHashRouter([
   {
     path: "404",
     element: <Error404 />,
+  },
+  {
+    path: "projects/:platform/:org/:repo/compare/:prevCommitHash/:currentCommitHash",
+    element: <ProjectComparator />,
   },
   {
     path: "projects/:platform/:org/:repo/commit/:commitHash",
