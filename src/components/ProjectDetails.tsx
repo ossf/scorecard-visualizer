@@ -1,8 +1,11 @@
 import { useParams } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
+
 import { getScorecardUrl } from "../utils/getScorecardUrl";
+import CommonError from "./CommonError";
 
 import "./ProjectDetails.css";
+
 interface ScoreElement {
   name: string;
   score: number;
@@ -20,10 +23,15 @@ function ProjectDetails() {
 
   const { isLoading, error, data } = useQuery({
     queryKey: ["projectData"],
-    queryFn: () =>
-      fetch(getScorecardUrl({ platform, org, repo, commitHash })).then((res) =>
-        res.json()
-      ),
+    queryFn: async () => {
+      const response = await fetch(
+        getScorecardUrl({ platform, org, repo, commitHash })
+      );
+      if (response.status >= 400) {
+        throw new Error("An error ocurred. Invalid response from server");
+      }
+      return response.json();
+    },
   });
 
   if (isLoading) {
@@ -31,7 +39,7 @@ function ProjectDetails() {
   }
 
   if (error) {
-    return <p>{`An error has occurred: ${error}`}</p>;
+    return <CommonError />;
   }
 
   return (
