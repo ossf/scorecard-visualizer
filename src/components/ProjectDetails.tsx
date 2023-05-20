@@ -16,7 +16,7 @@ interface ScoreElement {
 interface paramsTypes {
   platform: string | undefined;
   org: string | undefined;
-  repo: string | undefined; 
+  repo: string | undefined;
   commitHash: string | undefined;
 }
 
@@ -24,18 +24,20 @@ function ProjectDetails() {
   const params = useParams();
   const { platform, org, repo, commitHash } = params;
 
-  const getScorecardUrl = (params: paramsTypes) :string => {
-    let baseUrl = `https://api.securityscorecards.dev/projects/${params.platform}/${params.org}/${params.repo}`
-    if(params.commitHash){
-      baseUrl += `/?commit=${params.commitHash}`
+  const getScorecardUrl = (params: paramsTypes): string => {
+    let baseUrl = `https://api.securityscorecards.dev/projects/${params.platform}/${params.org}/${params.repo}`;
+    if (params.commitHash) {
+      baseUrl += `/?commit=${params.commitHash}`;
     }
-    return baseUrl
-  }
-  
+    return baseUrl;
+  };
+
   const { isLoading, error, data } = useQuery({
     queryKey: ["projectData"],
     queryFn: () =>
-      fetch(getScorecardUrl({platform, org, repo, commitHash})).then((res) => res.json()),
+      fetch(getScorecardUrl({ platform, org, repo, commitHash })).then((res) =>
+        res.json()
+      ),
   });
 
   if (isLoading) {
@@ -48,7 +50,7 @@ function ProjectDetails() {
 
   return (
     <>
-      <h1>OpenSSF scorecard for {`${org}/${repo}`}</h1>
+      <h1>OpenSSF Scorecard for {`${org}/${repo}`}</h1>
       <h2>{`Score: ${data.score}/10`}</h2>
       <p>Date: {data.date}</p>
       <p>
@@ -83,7 +85,7 @@ function ProjectDetails() {
         </a>
       </p>
       <p>
-        Improve your scoring with {" "}
+        Improve your scoring with{" "}
         <a
           href={`https://app.stepsecurity.io/securerepo?repo=${org}/${repo}`}
           target="_blank"
