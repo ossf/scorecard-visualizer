@@ -16,6 +16,7 @@ const router = createHashRouter([
   {
     path: "*",
     element: <CommonError />,
+    errorElement: <CommonError />,
   },
   {
     path: "404",
@@ -24,14 +25,17 @@ const router = createHashRouter([
   {
     path: "projects/:platform/:org/:repo/compare/:prevCommitHash/:currentCommitHash",
     element: <ProjectComparator />,
+    errorElement: <CommonError />,
   },
   {
     path: "projects/:platform/:org/:repo/commit/:commitHash",
     element: <ProjectDetails />,
+    errorElement: <CommonError />,
   },
   {
     path: "projects/:platform/:org/:repo",
     element: <ProjectDetails />,
+    errorElement: <CommonError />,
   },
 ]);
 
