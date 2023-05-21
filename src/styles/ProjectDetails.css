@@ -1,7 +1,19 @@
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+body {
+  padding: 40px;
+}
+
 /* Style the headings */
 h1 {
   font-size: 28px;
-  margin-bottom: 10px;
+  margin: 0 0 1.5em;
+  font-weight: 600;
+  font-size: 1.5em;
 }
 
 h2 {
@@ -15,8 +27,12 @@ h3 {
   margin-bottom: 10px;
 }
 
+h4 {
+  color: orange;
+}
+
 p {
-  margin-bottom: 10px;
+  margin: 0 0 1em;
 }
 
 hr {
@@ -66,10 +82,11 @@ a:hover {
   background-color: #f4f7f9;
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
-  font-size: 1rem;
+  font-size: 14px;
   font-weight: 500;
   font-family: monospace;
-  border-radius: 0.5rem;
+  letter-spacing: 0.3px;
+  line-height: 1.2rem;
   overflow-x: scroll;
 }
 
