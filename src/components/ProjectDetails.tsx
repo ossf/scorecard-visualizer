@@ -4,18 +4,9 @@ import { useQuery } from "@tanstack/react-query";
 import { getScorecardUrl } from "../utils/getScorecardUrl";
 import CommonError from "./CommonError";
 
-import "../styles/ProjectDetails.css";
+import { ScoreElement } from "../types";
 
-interface ScoreElement {
-  name: string;
-  score: number;
-  reason: string;
-  details: string[];
-  documentation: {
-    short: string;
-    url: string;
-  };
-}
+import "../styles/ProjectDetails.css";
 
 function ProjectDetails() {
   const params = useParams();
