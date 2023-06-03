@@ -5,6 +5,7 @@ import { getScorecardUrl } from "../utils/getScorecardUrl";
 import { formatDate } from "../utils/formatDate";
 import CommonError from "./CommonError";
 import Collapsible from "./Collapsable";
+import Loading from "./Loading";
 
 import { ScoreElement } from "../types";
 
@@ -28,7 +29,7 @@ function ProjectDetails() {
   });
 
   if (isLoading) {
-    return <p>Loading...</p>;
+    return <Loading />;
   }
 
   if (error) {
