@@ -2,6 +2,7 @@ import { useParams } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 
 import { getScorecardUrl } from "../utils/getScorecardUrl";
+import { formatDate } from "../utils/formatDate";
 import CommonError from "./CommonError";
 import Collapsible from "./Collapsable";
 
@@ -38,7 +39,7 @@ function ProjectDetails() {
     <>
       <h1>OpenSSF Scorecard for {`${org}/${repo}`}</h1>
       <h2>{`Score: ${data.score}/10`}</h2>
-      <p>Date: {data.date}</p>
+      <p>Date: {formatDate(data.date)}</p>
       <p>
         Scorecard version {data.scorecard.version}{" "}
         <a
