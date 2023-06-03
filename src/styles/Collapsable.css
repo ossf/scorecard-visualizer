@@ -1,0 +1,22 @@
+details {
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 0.5em 0.5em 0;
+  background-color: #f4f7f9;
+}
+
+summary {
+  font-weight: bold;
+  margin: -0.5em -0.5em 0;
+  padding: 0.5em;
+  cursor: pointer;
+}
+
+details[open] {
+  padding: 0.5em;
+}
+
+details[open] summary {
+  border-bottom: 1px solid black;
+  margin-bottom: 0.5em;
+}
