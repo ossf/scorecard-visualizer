@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 import { getScorecardUrl } from "../utils/getScorecardUrl";
+import { formatDate } from "../utils/formatDate";
 import CommonError from "./CommonError";
 import Collapsible from "./Collapsable";
 import Badge from "./Badge";
@@ -130,7 +131,7 @@ function ProjectComparator() {
         {`Current Score: ${currentData.score}/10`}{" "}
         {scoreChecker(currentData.score, previousData.score)}
       </h2>
-      <p>Date: {currentData.date}</p>
+      <p>Date: {formatDate(currentData.date)}</p>
       <p>
         Scorecard version {currentData.scorecard.version}{" "}
         <a
