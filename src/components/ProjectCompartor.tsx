@@ -124,20 +124,19 @@ function ProjectComparator() {
     <>
       <h1>OpenSSF Scorecard comparator for {`${org}/${repo}`}</h1>
       <div className="info-badge__wrapper">
-        <h2>
-            {`Current Score: ${currentData.score}/10`}{" "}
-        </h2>
+        <h2>{`Current Score: ${currentData.score}/10`} </h2>
         {scoreChecker(currentData.score, previousData.score)}
       </div>
-      <p>Analysis of commits {" "}
+      <p>
+        Analysis of commits{" "}
         <a
           href={`https://github.com/${org}/${repo}/commit/${currentData.repo.commit}`}
           target="_blank"
           rel="noreferrer"
         >
           {`(${currentData.repo.commit.substring(0, 8)})`}
-        </a>
-        {" "} and {" "}
+        </a>{" "}
+        and{" "}
         <a
           href={`https://github.com/${org}/${repo}/commit/${previousData.repo.commit}`}
           target="_blank"
@@ -162,12 +161,10 @@ function ProjectComparator() {
         <>
           <div key={element.name} className="card__wrapper">
             <div className="heading__wrapper">
-                <div className="info-badge__wrapper">
-                <h3>
-                    {element.name}
-                </h3>
+              <div className="info-badge__wrapper">
+                <h3>{element.name}</h3>
                 {scoreChecker(element.score, element.prevScore)}
-                </div>
+              </div>
               <span>{element.score}/10</span>
             </div>
             <p>
