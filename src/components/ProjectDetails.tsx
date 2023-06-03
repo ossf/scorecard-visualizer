@@ -3,6 +3,7 @@ import { useQuery } from "@tanstack/react-query";
 
 import { getScorecardUrl } from "../utils/getScorecardUrl";
 import CommonError from "./CommonError";
+import Collapsible from "./Collapsable";
 
 import { ScoreElement } from "../types";
 
@@ -100,16 +101,7 @@ function ProjectDetails() {
             </p>
             <p>Reasoning: {element?.reason.toLocaleLowerCase()}</p>
             {Array.isArray(element.details) && (
-              <>
-                <p>Details:</p>
-                <div className="details__wrapper">
-                  <ul>
-                    {element.details.map((el: string, i) => (
-                      <li key={i}>{el}</li>
-                    ))}
-                  </ul>
-                </div>
-              </>
+              <Collapsible details={element.details} />
             )}
           </div>
           <hr />
