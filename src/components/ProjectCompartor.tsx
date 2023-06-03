@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 import { getScorecardUrl } from "../utils/getScorecardUrl";
 import CommonError from "./CommonError";
+import Collapsible from "./Collapsable";
 import Badge from "./Badge";
 
 import { ScoreElement } from "../types";
@@ -180,16 +181,7 @@ function ProjectComparator() {
               Reasoning: <span>{element?.reason.toLocaleLowerCase()}</span>
             </p>
             {Array.isArray(element.details) && (
-              <>
-                <p>Details:</p>
-                <div className="details__wrapper">
-                  <ul>
-                    {element.details.map((el: string, i: number) => (
-                      <li key={i}>{el}</li>
-                    ))}
-                  </ul>
-                </div>
-              </>
+              <Collapsible details={element.details} />
             )}
             {(element.prevDetails || element.prevReason) && (
               <>
@@ -199,16 +191,7 @@ function ProjectComparator() {
                   <span>{element.prevReason.toLocaleLowerCase()}</span>
                 </p>
                 {element.prevDetails && (
-                  <>
-                    <p>Details:</p>
-                    <div className="details__wrapper">
-                      <ul>
-                        {element.prevDetails.map((el: string, i: number) => (
-                          <li key={i}>{el}</li>
-                        ))}
-                      </ul>
-                    </div>
-                  </>
+                  <Collapsible details={element.prevDetails} />
                 )}
               </>
             )}
