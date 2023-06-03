@@ -3,9 +3,10 @@ import { useParams } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 import { getScorecardUrl } from "../utils/getScorecardUrl";
 import { formatDate } from "../utils/formatDate";
+import { scoreChecker } from "../utils/comparator/scoreChecker";
 import CommonError from "./CommonError";
 import Collapsible from "./Collapsable";
-import Badge from "./Badge";
+import Loading from "./Loading";
 
 import { ScoreElement } from "../types";
 
@@ -94,26 +95,8 @@ function ProjectComparator() {
     areEqualDetails();
   }, [currentData, previousData]);
 
-  const scoreChecker = (currentValue: number, previousValue: number) => {
-    const result = currentValue - previousValue;
-
-    if (result > 0) {
-      return (
-        <Badge variant="increased" message={`Increased ${result.toFixed(1)}`} />
-      );
-    }
-
-    if (result < 0) {
-      return (
-        <Badge variant="decreased" message={`Decreased ${result.toFixed(1)}`} />
-      );
-    }
-
-    return <Badge message={"Unchanged"} />;
-  };
-
   if (prevCommitQuery.isLoading || currentCommitQuery.isLoading) {
-    return <p>Loading...</p>;
+    return <Loading />;
   }
 
   if (prevCommitQuery.error || currentCommitQuery.error) {
