@@ -1,25 +1,25 @@
 .loader {
-    text-align: center;
-    margin-top: 100px;
+  text-align: center;
+  margin-top: 100px;
 }
 .loader span {
-    display: inline-block;
-    vertical-align: middle;
-    width: 10px;
-    height: 10px;
-    margin: 50px auto;
-    background: black;
-    border-radius: 50px;
-    animation: loader 0.9s infinite alternate;
-    -moz-animation: loader 0.9s infinite alternate;
+  display: inline-block;
+  vertical-align: middle;
+  width: 10px;
+  height: 10px;
+  margin: 50px auto;
+  background: black;
+  border-radius: 50px;
+  animation: loader 0.9s infinite alternate;
+  -moz-animation: loader 0.9s infinite alternate;
 }
 .loader span:nth-of-type(2) {
-    animation-delay: 0.3s;
-    -moz-animation-delay: 0.3s;
+  animation-delay: 0.3s;
+  -moz-animation-delay: 0.3s;
 }
 .loader span:nth-of-type(3) {
-    animation-delay: 0.6s;
-    -moz-animation-delay: 0.6s;
+  animation-delay: 0.6s;
+  -moz-animation-delay: 0.6s;
 }
 
 @keyframes loader {
