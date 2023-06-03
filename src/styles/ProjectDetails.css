@@ -8,27 +8,26 @@ body {
   padding: 40px;
 }
 
-/* Style the headings */
+/* Style the headings and other elements */
 h1 {
   font-size: 28px;
-  margin: 0 0 1.5em;
+  margin: 0.5em 0 0.8em 0;
   font-weight: 600;
-  font-size: 1.5em;
 }
 
 h2 {
   font-size: 24px;
-  color: #007bff;
-  margin-bottom: 10px;
+  margin-right: 1rem;
 }
 
 h3 {
   font-size: 22px;
-  margin-bottom: 10px;
+  margin-right: 1rem;
 }
 
 h4 {
   color: orange;
+  margin: 2rem 0 1rem 0;
 }
 
 p {
@@ -38,7 +37,7 @@ p {
 hr {
   border: none;
   border-top: 1px solid #eee;
-  margin: 20px 0;
+  margin: 1.5rem 0 0 0;
 }
 
 div > div > span {
@@ -63,6 +62,7 @@ a:hover {
   text-decoration: underline;
 }
 
+/* Style the wrapper elements */
 .card__wrapper {
   padding: 0.7rem;
 }
@@ -90,6 +90,12 @@ a:hover {
 }
 
 .score-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.info-badge__wrapper {
   display: flex;
   flex-direction: row;
   align-items: center;
