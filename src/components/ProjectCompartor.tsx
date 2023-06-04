@@ -8,6 +8,7 @@ import CommonError from "./CommonError";
 import Collapsible from "./Collapsable";
 import Loading from "./Loading";
 
+import { SERVER_ERROR_MESSAGE } from "../constants/commonErrorMessage";
 import { ScoreElement } from "../types";
 
 import "../styles/ProjectDetails.css";
@@ -49,7 +50,9 @@ function ProjectComparator() {
 
   useEffect(() => {
     const areEqualDetails = () =>
-      currentData?.checks.forEach((e1: ScoreElement, index: number) => {
+      previousData?.checks &&
+      previousData?.score &&
+      currentData?.checks?.forEach((e1: ScoreElement, index: number) => {
         if (
           JSON.stringify(e1.details) !==
             JSON.stringify(previousData?.checks[index].details) ||
@@ -100,7 +103,7 @@ function ProjectComparator() {
   }
 
   if (prevCommitQuery.error || currentCommitQuery.error) {
-    return <CommonError />;
+    return <CommonError errorMessage={SERVER_ERROR_MESSAGE} />;
   }
 
   return (
