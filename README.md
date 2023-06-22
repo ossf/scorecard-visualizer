@@ -1,30 +1,55 @@
 # openssf-scorecard-api-visualizer
 
-Tool for visualizing the Open SSF Scorecard Api data in a human friendly way
+The OpenSSF Scorecard Monitor Visualizer is a tool that provides a visual representation of the OpenSSF Scorecard data for monitoring the security status of open source projects. It fetches the scorecard data from the [OpenSSF Scorecard API](https://api.securityscorecards.dev/#/results) and presents it in a user-friendly and interactive visual format.
 
-## Available Scripts
+The Visualizer is part of the [OpenSSF Scorecard Monitor](https://github.com/UlisesGascon/openssf-scorecard-monitor), where you can access to the features.
 
-In the project directory, you can run:
+## Features
 
-### `npm start`
+**Scorecard Data Visualizer:** Display the OpenSSF Scorecard data in a visual format for easy understanding and analysis.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+<br>
+    <div>
+        <img src='.github/other/demo1.gif' alt="visualizer-in-action"/>
+    </div>
+</br>
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+**Scorecard Data Comparator:** Compare between two commits that reported Scorecard data. See how the scores changed and further details.
 
-### `npm test`
+<br>
+    <div>
+        <img src='.github/other/gif_comparator.gif' alt="comparator-in-action"/>
+    </div>
+</br>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## How to use it
+The Visualizer and the Comparator can be used outside the Monitor.
 
-### `npm run build`
+You have 3 options of visualization. Depending on which one you want to check, you should craft your own url as:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Checks the latest Scorecard data available for a project: `https://kooltheba.github.io/openssf-scorecard-api-visualizer//projects/${platform}/${org}/${repo}`
+- Checks the Scorecard data for an specific commit (previously reported): `https://kooltheba.github.io/openssf-scorecard-api-visualizer/#/projects/${platform}/${org}/${repo}/commit/{commitHash}`
+- Compares two specific commits, previously reported: `https://kooltheba.github.io/openssf-scorecard-api-visualizer/#/projects/github.com/nodejs/node/compare/{prevCommitHash}/{currentCommitHash}`
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+> 👉 Please note that in order to retrieve data from the Scorecard API, it is necessary for organizations or repository owners to report their commits to the Scorecard. However, it's important to keep in mind that not all organizations report their commits, which may result in a `404 error` if the data is not available in the API. Please be aware that this behavior is expected and not indicative of a bug.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Examples
+- [Nodejs latest repository Scorecard](https://kooltheba.github.io/openssf-scorecard-api-visualizer/#/projects/github.com/nodejs/node)
+- [Nodejs specific commit Scorecard](https://kooltheba.github.io/openssf-scorecard-api-visualizer/#/projects/github.com/nodejs/node/commit/da80964a3d708ef3ae42d4424034f155ad37e07d)
+- [Nodejs reported commits comparation](https://kooltheba.github.io/openssf-scorecard-api-visualizer/#/projects/github.com/nodejs/node/compare/2ac5e9889aba461f5a54d320973d2574980d206b/da80964a3d708ef3ae42d4424034f155ad37e07d)
+
+## Contributing
+Contributions are welcome! If you would like to contribute to the OpenSSF Scorecard Monitor Visualizer project, please follow these steps:
+
+1. Fork the repository.
+2. Create a new branch for your feature or bug fix.
+3. Make your changes and ensure that the code is properly formatted.
+4. Write tests to cover your changes if applicable.
+5. Commit your changes and push them to your forked repository.
+6. Submit a pull request to the main repository, explaining your changes and providing any relevant details.
+
+## License
+This project is licensed under the [Apache License Version 2.0](LICENSE).
+
+## Support
+If you encounter any issues or have questions about the OpenSSF Scorecard Monitor Visualizer, please [open an issue](https://github.com/KoolTheba/openssf-scorecard-api-visualizer/issues/new) on the GitHub repository.
