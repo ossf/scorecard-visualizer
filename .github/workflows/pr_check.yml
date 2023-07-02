@@ -28,6 +28,6 @@ jobs:
       # - name: test
       #   run: npm run test
       - name: prepare test e2e
-        run: npm run start && sleep 10
+        run: npm run start & sleep 10
       - name: test e2e
         run: npm run test:e2e-ci
