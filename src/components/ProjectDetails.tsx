@@ -21,7 +21,7 @@ function ProjectDetails() {
       const response = await fetch(
         getScorecardUrl({ platform, org, repo, commitHash })
       );
-      if (response.status >= 400) {
+      if (response.status >= 500) {
         throw new Error("An error ocurred. Invalid response from server");
       }
       return response.json();
@@ -40,8 +40,8 @@ function ProjectDetails() {
     <>
       <h1>OpenSSF Scorecard for {`${org}/${repo}`}</h1>
       <h2>{`Score: ${data.score}/10`}</h2>
-      <p>Date: {formatDate(data.date)}</p>
-      <p>
+      <p data-testid="date">Date: {formatDate(data.date)}</p>
+      <p data-testid="scorecard-version">
         Scorecard version {data.scorecard.version}{" "}
         <a
           href={`https://github.com/ossf/scorecard/commit/${data.scorecard.commit}`}
@@ -51,7 +51,7 @@ function ProjectDetails() {
           {`(${data.scorecard.commit.substring(0, 8)})`}
         </a>
       </p>
-      <p>
+      <p data-testid="current-commit">
         Current commit{" "}
         <a
           href={`https://github.com/${org}/${repo}/commit/${data.repo.commit}`}
@@ -61,25 +61,23 @@ function ProjectDetails() {
           {`(${data.repo.commit.substring(0, 8)})`}
         </a>
       </p>
-      <p>
+      <p data-testid="deps-dev">
         Additional info at{" "}
         <a
           href={`https://deps.dev/project/github/${org}%2F${repo}`}
           target="_blank"
           rel="noreferrer"
         >
-          {" "}
           deps.dev
         </a>
       </p>
-      <p>
+      <p data-testid="step-security">
         Improve your scoring with{" "}
         <a
           href={`https://app.stepsecurity.io/securerepo?repo=${org}/${repo}`}
           target="_blank"
           rel="noreferrer"
         >
-          {" "}
           StepSecurity
         </a>
       </p>
@@ -87,7 +85,7 @@ function ProjectDetails() {
       {data.checks.map((element: ScoreElement) => (
         <>
           <div key={element.name} className="card__wrapper">
-            <div className="heading__wrapper">
+            <div className="heading__wrapper" data-testid={element.name}>
               <h3>{element.name}</h3>
               <span>{element.score}/10</span>
             </div>
