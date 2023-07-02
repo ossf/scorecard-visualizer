@@ -5,4 +5,4 @@ export const SPECIFIC_SERVER_ERROR_MESSAGE: string =
 export const COMMON_ERROR_MESSAGE: string =
   "An error ocurred. Please refresh/try again.";
 export const TYPO_ERROR_MESSAGE: string =
-  "Please check if the org/repository exists on GitHub.";
+  "Please check if the org/repository/commit has been analysed by the Scorecard.";

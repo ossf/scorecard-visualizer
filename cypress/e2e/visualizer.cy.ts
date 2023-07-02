@@ -20,7 +20,7 @@ describe("Visualizer", () => {
     );
     cy.get("p", { timeout: 10000 }).should(
       "contain",
-      "Please check if the org/repository exists on GitHub."
+      "Please check if the org/repository/commit has been analysed by the Scorecard."
     );
   });
 
