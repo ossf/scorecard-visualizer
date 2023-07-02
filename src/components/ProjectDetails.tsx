@@ -21,7 +21,7 @@ function ProjectDetails() {
       const response = await fetch(
         getScorecardUrl({ platform, org, repo, commitHash })
       );
-      if (response.status >= 400) {
+      if (response.status >= 500) {
         throw new Error("An error ocurred. Invalid response from server");
       }
       return response.json();
