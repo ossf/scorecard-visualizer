@@ -23,7 +23,11 @@ jobs:
         run: npm run lint
       - name: formatting
         run: npm run format
-      # - name: test
-      # run: npm run test
       - name: build
         run: npm run build
+      # - name: test
+      #   run: npm run test
+      - name: prepare test e2e
+        run: npm run start & sleep 10
+      - name: test e2e
+        run: npm run test:e2e-ci
