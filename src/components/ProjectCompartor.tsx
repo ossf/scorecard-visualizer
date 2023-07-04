@@ -24,7 +24,7 @@ function ProjectComparator() {
       const response = await fetch(
         getScorecardUrl({ platform, org, repo, commitHash: prevCommitHash })
       );
-      if (response.status >= 400) {
+      if (response.status >= 500) {
         throw new Error("An error ocurred. Invalid response from server");
       }
       return response.json();
@@ -37,7 +37,7 @@ function ProjectComparator() {
       const response = await fetch(
         getScorecardUrl({ platform, org, repo, commitHash: currentCommitHash })
       );
-      if (response.status >= 400) {
+      if (response.status >= 500) {
         throw new Error("An error ocurred. Invalid response from server");
       }
       return response.json();
