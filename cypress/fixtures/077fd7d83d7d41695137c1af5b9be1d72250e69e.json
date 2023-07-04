@@ -1,0 +1,341 @@
+{
+  "date": "2023-06-07T23:32:59Z",
+  "repo": {
+    "name": "github.com/nodejs/node",
+    "commit": "077fd7d83d7d41695137c1af5b9be1d72250e69e"
+  },
+  "scorecard": {
+    "version": "v4.10.5",
+    "commit": "27cfe92ed356fdb5a398c919ad480817ea907808"
+  },
+  "score": 7.3,
+  "checks": [
+    {
+      "name": "Binary-Artifacts",
+      "score": 0,
+      "reason": "binaries present in source code",
+      "details": [
+        "Warn: binary detected: deps/undici/src/lib/llhttp/llhttp.wasm:1",
+        "Warn: binary detected: deps/undici/src/lib/llhttp/llhttp_simd.wasm:1",
+        "Warn: binary detected: deps/v8/test/fuzzer/wasm/regress-1115280.wasm:1",
+        "Warn: binary detected: deps/v8/test/fuzzer/wasm/regress-1127717.wasm:1",
+        "Warn: binary detected: deps/v8/test/fuzzer/wasm/regress-1191853.wasm:1",
+        "Warn: binary detected: deps/v8/test/fuzzer/wasm/regress-1404619.wasm:1",
+        "Warn: binary detected: deps/v8/test/fuzzer/wasm_async/regress-1115431.wasm:1",
+        "Warn: binary detected: deps/v8/test/fuzzer/wasm_async/regress-1405322.wasm:1",
+        "Warn: binary detected: deps/v8/test/fuzzer/wasm_async/regression-761784.wasm:1",
+        "Warn: binary detected: deps/v8/test/fuzzer/wasm_async/valid.wasm:1",
+        "Warn: binary detected: deps/v8/test/fuzzer/wasm_streaming/empty_module:1",
+        "Warn: binary detected: deps/v8/test/fuzzer/wasm_streaming/regress-1334577:1",
+        "Warn: binary detected: deps/v8/test/fuzzer/wasm_streaming/regress-1335023:1",
+        "Warn: binary detected: deps/v8/test/mjsunit/wasm/incrementer.wasm:1",
+        "Warn: binary detected: deps/v8/third_party/ittapi/include/fortran/posix/x86/ittfortran.o:1",
+        "Warn: binary detected: deps/v8/third_party/ittapi/include/fortran/posix/x86_64/ittfortran.o:1",
+        "Warn: binary detected: deps/v8/third_party/wasm-api/example/callback.wasm:1",
+        "Warn: binary detected: deps/v8/third_party/wasm-api/example/finalize.wasm:1",
+        "Warn: binary detected: deps/v8/third_party/wasm-api/example/global.wasm:1",
+        "Warn: binary detected: deps/v8/third_party/wasm-api/example/hello.wasm:1",
+        "Warn: binary detected: deps/v8/third_party/wasm-api/example/hostref.wasm:1",
+        "Warn: binary detected: deps/v8/third_party/wasm-api/example/memory.wasm:1",
+        "Warn: binary detected: deps/v8/third_party/wasm-api/example/multi.wasm:1",
+        "Warn: binary detected: deps/v8/third_party/wasm-api/example/reflect.wasm:1",
+        "Warn: binary detected: deps/v8/third_party/wasm-api/example/serialize.wasm:1",
+        "Warn: binary detected: deps/v8/third_party/wasm-api/example/start.wasm:1",
+        "Warn: binary detected: deps/v8/third_party/wasm-api/example/table.wasm:1",
+        "Warn: binary detected: deps/v8/third_party/wasm-api/example/threads.wasm:1",
+        "Warn: binary detected: deps/v8/third_party/wasm-api/example/trap.wasm:1",
+        "Warn: binary detected: deps/zlib/google/test/data/evil_via_invalid_utf8.zip:1",
+        "Warn: binary detected: test/fixtures/crash.wasm:1",
+        "Warn: binary detected: test/fixtures/es-modules/simple.wasm:1",
+        "Warn: binary detected: test/fixtures/shared-memory.wasm:1",
+        "Warn: binary detected: test/fixtures/simple.wasm:1",
+        "Warn: binary detected: test/fixtures/wpt/wasm/webapi/esm-integration/resources/execute-start.wasm:1",
+        "Warn: binary detected: test/fixtures/wpt/wasm/webapi/esm-integration/resources/exported-names.wasm:1",
+        "Warn: binary detected: test/fixtures/wpt/wasm/webapi/esm-integration/resources/invalid-bytecode.wasm:1",
+        "Warn: binary detected: test/fixtures/wpt/wasm/webapi/esm-integration/resources/invalid-module.wasm:1",
+        "Warn: binary detected: test/fixtures/wpt/wasm/webapi/esm-integration/resources/js-wasm-cycle-function-error.wasm:1",
+        "Warn: binary detected: test/fixtures/wpt/wasm/webapi/esm-integration/resources/js-wasm-cycle-global.wasm:1",
+        "Warn: binary detected: test/fixtures/wpt/wasm/webapi/esm-integration/resources/js-wasm-cycle-memory.wasm:1",
+        "Warn: binary detected: test/fixtures/wpt/wasm/webapi/esm-integration/resources/js-wasm-cycle-table.wasm:1",
+        "Warn: binary detected: test/fixtures/wpt/wasm/webapi/esm-integration/resources/js-wasm-cycle-value.wasm:1",
+        "Warn: binary detected: test/fixtures/wpt/wasm/webapi/esm-integration/resources/js-wasm-cycle.wasm:1",
+        "Warn: binary detected: test/fixtures/wpt/wasm/webapi/esm-integration/resources/resolve-export.wasm:1",
+        "Warn: binary detected: test/fixtures/wpt/wasm/webapi/esm-integration/resources/wasm-export-i64-global.wasm:1",
+        "Warn: binary detected: test/fixtures/wpt/wasm/webapi/esm-integration/resources/wasm-export-to-wasm.wasm:1",
+        "Warn: binary detected: test/fixtures/wpt/wasm/webapi/esm-integration/resources/wasm-import-error-from-wasm.wasm:1",
+        "Warn: binary detected: test/fixtures/wpt/wasm/webapi/esm-integration/resources/wasm-import-from-wasm.wasm:1",
+        "Warn: binary detected: test/fixtures/wpt/wasm/webapi/esm-integration/resources/wasm-import-func.wasm:1",
+        "Warn: binary detected: test/fixtures/wpt/wasm/webapi/esm-integration/resources/wasm-import-global.wasm:1",
+        "Warn: binary detected: test/fixtures/wpt/wasm/webapi/esm-integration/resources/wasm-import-memory.wasm:1",
+        "Warn: binary detected: test/fixtures/wpt/wasm/webapi/esm-integration/resources/wasm-import-table.wasm:1",
+        "Warn: binary detected: test/fixtures/wpt/wasm/webapi/esm-integration/resources/wasm-js-cycle.wasm:1",
+        "Warn: binary detected: test/fixtures/wpt/wasm/webapi/esm-integration/resources/worker.wasm:1",
+        "Warn: binary detected: test/fixtures/wpt/wasm/webapi/resources/incrementer.no_mime_type.wasm:1",
+        "Warn: binary detected: test/fixtures/wpt/wasm/webapi/resources/incrementer.wasm:1",
+        "Warn: binary detected: test/fixtures/wpt/wasm/webapi/resources/incrementer.wrong_mime_type.wasm:1",
+        "Warn: binary detected: test/wasi/wasm/cant_dotdot.wasm:1",
+        "Warn: binary detected: test/wasi/wasm/clock_getres.wasm:1",
+        "Warn: binary detected: test/wasi/wasm/create_symlink.wasm:1",
+        "Warn: binary detected: test/wasi/wasm/exitcode.wasm:1",
+        "Warn: binary detected: test/wasi/wasm/fd_prestat_get_refresh.wasm:1",
+        "Warn: binary detected: test/wasi/wasm/follow_symlink.wasm:1",
+        "Warn: binary detected: test/wasi/wasm/freopen.wasm:1",
+        "Warn: binary detected: test/wasi/wasm/ftruncate.wasm:1",
+        "Warn: binary detected: test/wasi/wasm/getentropy.wasm:1",
+        "Warn: binary detected: test/wasi/wasm/getrusage.wasm:1",
+        "Warn: binary detected: test/wasi/wasm/gettimeofday.wasm:1",
+        "Warn: binary detected: test/wasi/wasm/link.wasm:1",
+        "Warn: binary detected: test/wasi/wasm/main_args.wasm:1",
+        "Warn: binary detected: test/wasi/wasm/notdir.wasm:1",
+        "Warn: binary detected: test/wasi/wasm/poll.wasm:1",
+        "Warn: binary detected: test/wasi/wasm/preopen_populates.wasm:1",
+        "Warn: binary detected: test/wasi/wasm/read_file.wasm:1",
+        "Warn: binary detected: test/wasi/wasm/read_file_twice.wasm:1",
+        "Warn: binary detected: test/wasi/wasm/readdir.wasm:1",
+        "Warn: binary detected: test/wasi/wasm/sock.wasm:1",
+        "Warn: binary detected: test/wasi/wasm/stat.wasm:1",
+        "Warn: binary detected: test/wasi/wasm/stdin.wasm:1",
+        "Warn: binary detected: test/wasi/wasm/symlink_escape.wasm:1",
+        "Warn: binary detected: test/wasi/wasm/symlink_loop.wasm:1",
+        "Warn: binary detected: test/wasi/wasm/write_file.wasm:1"
+      ],
+      "documentation": {
+        "short": "Determines if the project has generated executable (binary) artifacts in the source repository.",
+        "url": "https://github.com/ossf/scorecard/blob/27cfe92ed356fdb5a398c919ad480817ea907808/docs/checks.md#binary-artifacts"
+      }
+    },
+    {
+      "name": "Branch-Protection",
+      "score": -1,
+      "reason": "internal error: error during branchesHandler.setup: internal error: githubv4.Query: Resource not accessible by integration",
+      "details": null,
+      "documentation": {
+        "short": "Determines if the default and release branches are protected with GitHub's branch protection settings.",
+        "url": "https://github.com/ossf/scorecard/blob/27cfe92ed356fdb5a398c919ad480817ea907808/docs/checks.md#branch-protection"
+      }
+    },
+    {
+      "name": "CI-Tests",
+      "score": 9,
+      "reason": "21 out of 22 merged PRs checked by a CI test -- score normalized to 9",
+      "details": null,
+      "documentation": {
+        "short": "Determines if the project runs tests before pull requests are merged.",
+        "url": "https://github.com/ossf/scorecard/blob/27cfe92ed356fdb5a398c919ad480817ea907808/docs/checks.md#ci-tests"
+      }
+    },
+    {
+      "name": "CII-Best-Practices",
+      "score": 5,
+      "reason": "badge detected: passing",
+      "details": null,
+      "documentation": {
+        "short": "Determines if the project has an OpenSSF (formerly CII) Best Practices Badge.",
+        "url": "https://github.com/ossf/scorecard/blob/27cfe92ed356fdb5a398c919ad480817ea907808/docs/checks.md#cii-best-practices"
+      }
+    },
+    {
+      "name": "Code-Review",
+      "score": 0,
+      "reason": "found 8 unreviewed human changesets",
+      "details": null,
+      "documentation": {
+        "short": "Determines if the project requires code review before pull requests (aka merge requests) are merged.",
+        "url": "https://github.com/ossf/scorecard/blob/27cfe92ed356fdb5a398c919ad480817ea907808/docs/checks.md#code-review"
+      }
+    },
+    {
+      "name": "Contributors",
+      "score": 10,
+      "reason": "100 different organizations found -- score normalized to 10",
+      "details": [
+        "Info: contributors work for CasparCG,CloudNativeJS,DxWnd,ES-Community,Empeeric,Jasig,Level,MaibornWolff,NodeRedis,NodeSummit,Old-Stuff,RuntimeTools,WebAssembly,WebAudio,activitystreams,adonisjs,ataraxia consulting,babel,browserify,cheminfo,cheminfo-js,cloudflare,dancejs,denoland,digitalocean,dimsumjs,dot-org,drogue-iot,ender-js,filecoin-project,github,github-beta,gypified,image-js,ipfs,ipld,istanbuljs,jQuerySF,js-js,jstat,jstime,libuv,linuxfoundationorg,maia-tool,maibornwolff gmbh,meatspaces,minibuf,mljs,mongodb,monome-community,multiformats,netty,node-forward,node-inspector,node4good,nodebots,nodejs,nodeshift,nodeshift-starters,nodesource,nubjs,nujs,nxtedition,oftc,openjs-foundation,peerlinks,pkgjs,polyhack,postmates,primus,propelml,red hat,redhat-developer,redhatofficial,reportico,require.io,requireio,revisitors,sagemath,sclorg,signalapp,socket supply co.,strongloop,strongloop-community,strongloop-forks,taphub,tapjs,tc39,tc39-transfer,tier.run,tu wien,ucsf-ckm,unshiftio,wafflejs,wasm-signatures,websockets,whatwg,wintercg,zakodium,zakodium-oss"
+      ],
+      "documentation": {
+        "short": "Determines if the project has a set of contributors from multiple organizations (e.g., companies).",
+        "url": "https://github.com/ossf/scorecard/blob/27cfe92ed356fdb5a398c919ad480817ea907808/docs/checks.md#contributors"
+      }
+    },
+    {
+      "name": "Dangerous-Workflow",
+      "score": 10,
+      "reason": "no dangerous workflow patterns detected",
+      "details": null,
+      "documentation": {
+        "short": "Determines if the project's GitHub Action workflows avoid dangerous patterns.",
+        "url": "https://github.com/ossf/scorecard/blob/27cfe92ed356fdb5a398c919ad480817ea907808/docs/checks.md#dangerous-workflow"
+      }
+    },
+    {
+      "name": "Dependency-Update-Tool",
+      "score": 10,
+      "reason": "update tool detected",
+      "details": ["Info: Dependabot detected: .github/dependabot.yml:1"],
+      "documentation": {
+        "short": "Determines if the project uses a dependency update tool.",
+        "url": "https://github.com/ossf/scorecard/blob/27cfe92ed356fdb5a398c919ad480817ea907808/docs/checks.md#dependency-update-tool"
+      }
+    },
+    {
+      "name": "Fuzzing",
+      "score": 10,
+      "reason": "project is fuzzed with [OSSFuzz]",
+      "details": null,
+      "documentation": {
+        "short": "Determines if the project uses fuzzing.",
+        "url": "https://github.com/ossf/scorecard/blob/27cfe92ed356fdb5a398c919ad480817ea907808/docs/checks.md#fuzzing"
+      }
+    },
+    {
+      "name": "License",
+      "score": 9,
+      "reason": "license file detected",
+      "details": [
+        "Info: License file found in expected location: LICENSE:1",
+        "Warn: Any licence detected not an FSF or OSI recognized license: LICENSE:1"
+      ],
+      "documentation": {
+        "short": "Determines if the project has defined a license.",
+        "url": "https://github.com/ossf/scorecard/blob/27cfe92ed356fdb5a398c919ad480817ea907808/docs/checks.md#license"
+      }
+    },
+    {
+      "name": "Maintained",
+      "score": 10,
+      "reason": "30 commit(s) out of 30 and 17 issue activity out of 30 found in the last 90 days -- score normalized to 10",
+      "details": null,
+      "documentation": {
+        "short": "Determines if the project is \"actively maintained\".",
+        "url": "https://github.com/ossf/scorecard/blob/27cfe92ed356fdb5a398c919ad480817ea907808/docs/checks.md#maintained"
+      }
+    },
+    {
+      "name": "Packaging",
+      "score": -1,
+      "reason": "no published package detected",
+      "details": ["Warn: no GitHub publishing workflow detected"],
+      "documentation": {
+        "short": "Determines if the project is published as a package that others can easily download, install, easily update, and uninstall.",
+        "url": "https://github.com/ossf/scorecard/blob/27cfe92ed356fdb5a398c919ad480817ea907808/docs/checks.md#packaging"
+      }
+    },
+    {
+      "name": "Pinned-Dependencies",
+      "score": 7,
+      "reason": "dependency not pinned by hash detected -- score normalized to 7",
+      "details": [
+        "Warn: containerImage not pinned by hash: .devcontainer/Dockerfile:1: pin your Docker image by updating nodejs/devcontainer:nightly to nodejs/devcontainer:nightly@sha256:f8db157a30680ecabe44e63e54cb2ff44e1d981fef9a808dbd9b7309d5a2d301",
+        "Warn: containerImage not pinned by hash: deps/openssl/config/Dockerfile:1: pin your Docker image by updating ubuntu:20.04 to ubuntu:20.04@sha256:db8bf6f4fb351aa7a26e27ba2686cf35a6a409f65603e59d4c203e58387dc6b3",
+        "Warn: npmCommand not pinned by hash: .github/workflows/auto-start-ci.yml:60",
+        "Warn: npmCommand not pinned by hash: .github/workflows/commit-queue.yml:79",
+        "Warn: pipCommand not pinned by hash: .github/workflows/coverage-linux-without-intl.yml:51",
+        "Warn: pipCommand not pinned by hash: .github/workflows/coverage-linux.yml:51",
+        "Warn: npmCommand not pinned by hash: .github/workflows/daily-wpt-fyi.yml:113",
+        "Warn: npmCommand not pinned by hash: .github/workflows/update-v8.yml:38",
+        "Info: GitHub-owned GitHubActions are pinned",
+        "Info: Third-party GitHubActions are pinned",
+        "Info: no insecure (not pinned by hash) dependency downloads found in Dockerfiles",
+        "Info: no insecure (not pinned by hash) dependency downloads found in shell scripts"
+      ],
+      "documentation": {
+        "short": "Determines if the project has declared and pinned the dependencies of its build process.",
+        "url": "https://github.com/ossf/scorecard/blob/27cfe92ed356fdb5a398c919ad480817ea907808/docs/checks.md#pinned-dependencies"
+      }
+    },
+    {
+      "name": "SAST",
+      "score": 0,
+      "reason": "SAST tool is not run on all commits -- score normalized to 0",
+      "details": [
+        "Warn: 0 commits out of 22 are checked with a SAST tool",
+        "Warn: CodeQL tool not detected"
+      ],
+      "documentation": {
+        "short": "Determines if the project uses static code analysis.",
+        "url": "https://github.com/ossf/scorecard/blob/27cfe92ed356fdb5a398c919ad480817ea907808/docs/checks.md#sast"
+      }
+    },
+    {
+      "name": "Security-Policy",
+      "score": 10,
+      "reason": "security policy file detected",
+      "details": [
+        "Info: Found linked content in security policy: SECURITY.md",
+        "Info: Found text in security policy: SECURITY.md",
+        "Info: Found disclosure, vulnerability, and/or timelines in security policy: SECURITY.md",
+        "Info: security policy detected in current repo: SECURITY.md"
+      ],
+      "documentation": {
+        "short": "Determines if the project has published a security policy.",
+        "url": "https://github.com/ossf/scorecard/blob/27cfe92ed356fdb5a398c919ad480817ea907808/docs/checks.md#security-policy"
+      }
+    },
+    {
+      "name": "Signed-Releases",
+      "score": -1,
+      "reason": "no releases found",
+      "details": ["Warn: no GitHub releases found"],
+      "documentation": {
+        "short": "Determines if the project cryptographically signs release artifacts.",
+        "url": "https://github.com/ossf/scorecard/blob/27cfe92ed356fdb5a398c919ad480817ea907808/docs/checks.md#signed-releases"
+      }
+    },
+    {
+      "name": "Token-Permissions",
+      "score": 10,
+      "reason": "tokens are read-only in GitHub workflows",
+      "details": [
+        "Info: High severity: topLevel 'contents' permission set to 'read': .github/workflows/auto-start-ci.yml:18",
+        "Info: Medium severity: jobLevel 'pull-requests' permission set to 'read': .github/workflows/auto-start-ci.yml:23",
+        "Info: Medium severity: jobLevel 'contents' permission set to 'read': .github/workflows/auto-start-ci.yml:43",
+        "Info: High severity: topLevel 'contents' permission set to 'read': .github/workflows/build-tarball.yml:35",
+        "Info: High severity: topLevel 'contents' permission set to 'read': .github/workflows/build-windows.yml:30",
+        "Info: High severity: topLevel 'contents' permission set to 'read': .github/workflows/close-stale-feature-requests.yml:32",
+        "Info: High severity: topLevel 'contents' permission set to 'read': .github/workflows/close-stale-pull-requests.yml:29",
+        "Info: High severity: topLevel 'contents' permission set to 'read': .github/workflows/close-stalled.yml:13",
+        "Info: High severity: topLevel 'contents' permission set to 'read': .github/workflows/comment-labeled.yml:19",
+        "Info: High severity: topLevel 'contents' permission set to 'read': .github/workflows/commit-lint.yml:9",
+        "Info: High severity: topLevel 'contents' permission set to 'read': .github/workflows/commit-queue.yml:22",
+        "Info: Medium severity: jobLevel 'pull-requests' permission set to 'read': .github/workflows/commit-queue.yml:27",
+        "Info: High severity: topLevel 'contents' permission set to 'read': .github/workflows/coverage-linux-without-intl.yml:33",
+        "Info: High severity: topLevel 'contents' permission set to 'read': .github/workflows/coverage-linux.yml:33",
+        "Info: High severity: topLevel 'contents' permission set to 'read': .github/workflows/coverage-windows.yml:35",
+        "Info: High severity: topLevel 'contents' permission set to 'read': .github/workflows/daily-wpt-fyi.yml:24",
+        "Info: High severity: topLevel 'contents' permission set to 'read': .github/workflows/daily.yml:12",
+        "Info: High severity: topLevel 'contents' permission set to 'read': .github/workflows/doc.yml:20",
+        "Info: High severity: topLevel 'contents' permission set to 'read': .github/workflows/find-inactive-collaborators.yml:14",
+        "Info: High severity: topLevel 'contents' permission set to 'read': .github/workflows/find-inactive-tsc.yml:14",
+        "Info: High severity: topLevel 'contents' permission set to 'read': .github/workflows/label-flaky-test-issue.yml:8",
+        "Info: High severity: topLevel 'contents' permission set to 'read': .github/workflows/label-pr.yml:8",
+        "Info: High severity: topLevel 'contents' permission set to 'read': .github/workflows/license-builder.yml:10",
+        "Warn: Medium severity: jobLevel 'contents' permission set to 'write': .github/workflows/license-builder.yml:15: Verify which permissions are needed and consider whether you can reduce them. (High effort)",
+        "Info: High severity: topLevel 'contents' permission set to 'read': .github/workflows/linters.yml:21",
+        "Info: High severity: topLevel 'contents' permission set to 'read': .github/workflows/notify-on-push.yml:8",
+        "Info: High severity: topLevel permissions set to 'read-all': .github/workflows/scorecard.yml:19",
+        "Info: High severity: topLevel 'contents' permission set to 'read': .github/workflows/test-asan.yml:37",
+        "Info: High severity: topLevel 'contents' permission set to 'read': .github/workflows/test-internet.yml:28",
+        "Info: High severity: topLevel 'contents' permission set to 'read': .github/workflows/test-linux.yml:30",
+        "Info: High severity: topLevel 'contents' permission set to 'read': .github/workflows/test-macos.yml:36",
+        "Info: High severity: topLevel 'contents' permission set to 'read': .github/workflows/timezone-update.yml:10",
+        "Warn: Medium severity: jobLevel 'contents' permission set to 'write': .github/workflows/timezone-update.yml:15: Verify which permissions are needed and consider whether you can reduce them. (High effort)",
+        "Info: High severity: topLevel 'contents' permission set to 'read': .github/workflows/tools.yml:47",
+        "Info: High severity: topLevel 'contents' permission set to 'read': .github/workflows/update-openssl.yml:10",
+        "Info: High severity: topLevel 'contents' permission set to 'read': .github/workflows/update-v8.yml:12"
+      ],
+      "documentation": {
+        "short": "Determines if the project's workflows follow the principle of least privilege.",
+        "url": "https://github.com/ossf/scorecard/blob/27cfe92ed356fdb5a398c919ad480817ea907808/docs/checks.md#token-permissions"
+      }
+    },
+    {
+      "name": "Vulnerabilities",
+      "score": 10,
+      "reason": "no vulnerabilities detected",
+      "details": null,
+      "documentation": {
+        "short": "Determines if the project has open, known unfixed vulnerabilities.",
+        "url": "https://github.com/ossf/scorecard/blob/27cfe92ed356fdb5a398c919ad480817ea907808/docs/checks.md#vulnerabilities"
+      }
+    }
+  ]
+}
