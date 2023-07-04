@@ -103,11 +103,14 @@ function ProjectComparator() {
   return (
     <>
       <h1>OpenSSF Scorecard comparator for {`${org}/${repo}`}</h1>
-      <div className="info-badge__wrapper">
+      <div
+        data-testid="current-score-and-badge"
+        className="info-badge__wrapper"
+      >
         <h2>{`Current Score: ${currentData.score}/10`} </h2>
         {scoreChecker(currentData.score, previousData.score)}
       </div>
-      <p>
+      <p data-testid="commits-analysis">
         Analysis of commits{" "}
         <a
           href={`https://github.com/${org}/${repo}/commit/${currentData.repo.commit}`}
@@ -125,8 +128,8 @@ function ProjectComparator() {
           {`(${previousData.repo.commit.substring(0, 8)})`}
         </a>
       </p>
-      <p>Date: {formatDate(currentData.date)}</p>
-      <p>
+      <p data-testid="date">Date: {formatDate(currentData.date)}</p>
+      <p data-testid="scorecard-version">
         Scorecard version {currentData.scorecard.version}{" "}
         <a
           href={`https://github.com/ossf/scorecard/commit/${currentData.scorecard.commit}`}
