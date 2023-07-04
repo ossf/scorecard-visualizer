@@ -8,7 +8,6 @@ import CommonError from "./CommonError";
 import Collapsible from "./Collapsable";
 import Loading from "./Loading";
 
-import { SERVER_ERROR_MESSAGE } from "../constants/commonErrorMessage";
 import { ScoreElement } from "../types";
 
 import "../styles/ProjectDetails.css";
@@ -103,7 +102,7 @@ function ProjectComparator() {
   }
 
   if (prevCommitQuery.error || currentCommitQuery.error) {
-    return <CommonError errorMessage={SERVER_ERROR_MESSAGE} />;
+    return <CommonError />;
   }
 
   return (
