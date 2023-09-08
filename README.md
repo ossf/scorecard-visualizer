@@ -22,13 +22,24 @@ The Visualizer is part of the [OpenSSF Scorecard Monitor](https://github.com/Uli
     </div>
 </br>
 
+**Scorecard Data Comparator Diff:** Makes easier the visualization of the differences in the Scorecard comparator reasoning and details.
+
+<br>
+    <div>
+        <img src='.github/other/comparator-diff1.png' alt="comparator-diff-reasoning"/>
+    </div>
+        <div>
+        <img src='.github/other/comparator-diff2.png' alt="comparator-diff-details"/>
+    </div>
+</br>
+
 ## How to use it
 
 The Visualizer and the Comparator can be used outside the Monitor.
 
 You have 3 options of visualization. Depending on which one you want to check, you should craft your own url as:
 
-- Checks the latest Scorecard data available for a project: `https://kooltheba.github.io/openssf-scorecard-api-visualizer//projects/${platform}/${org}/${repo}`
+- Checks the latest Scorecard data available for a project: `https://kooltheba.github.io/openssf-scorecard-api-visualizer/#/projects/${platform}/${org}/${repo}`
 - Checks the Scorecard data for an specific commit (previously reported): `https://kooltheba.github.io/openssf-scorecard-api-visualizer/#/projects/${platform}/${org}/${repo}/commit/{commitHash}`
 - Compares two specific commits, previously reported: `https://kooltheba.github.io/openssf-scorecard-api-visualizer/#/projects/github.com/nodejs/node/compare/{prevCommitHash}/{currentCommitHash}`
 
