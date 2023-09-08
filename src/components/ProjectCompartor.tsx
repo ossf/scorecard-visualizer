@@ -7,7 +7,7 @@ import { scoreChecker } from "../utils/comparator/scoreChecker";
 import CommonError from "./CommonError";
 import Collapsible from "./Collapsable";
 import Loading from "./Loading";
-
+import { ComparatorDiff } from "./ComparatorDiff";
 import { ScoreElement } from "../types";
 
 import "../styles/ProjectDetails.css";
@@ -22,7 +22,7 @@ function ProjectComparator() {
     queryKey: ["prevCommit"],
     queryFn: async () => {
       const response = await fetch(
-        getScorecardUrl({ platform, org, repo, commitHash: prevCommitHash })
+        getScorecardUrl({ platform, org, repo, commitHash: prevCommitHash }),
       );
       if (response.status >= 500) {
         throw new Error("An error ocurred. Invalid response from server");
@@ -35,7 +35,7 @@ function ProjectComparator() {
     queryKey: ["currentCommit"],
     queryFn: async () => {
       const response = await fetch(
-        getScorecardUrl({ platform, org, repo, commitHash: currentCommitHash })
+        getScorecardUrl({ platform, org, repo, commitHash: currentCommitHash }),
       );
       if (response.status >= 500) {
         throw new Error("An error ocurred. Invalid response from server");
@@ -85,7 +85,7 @@ function ProjectComparator() {
               url: e1.documentation.url,
             };
           }
-        }
+        },
       );
       setState(consolidatedData);
     };
@@ -157,23 +157,27 @@ function ProjectComparator() {
                   See documentation
                 </a>
               </p>
-              <p>
-                Reasoning: <span>{element?.reason.toLocaleLowerCase()}</span>
-              </p>
-              {Array.isArray(element.details) && (
-                <Collapsible details={element.details} />
-              )}
               {(element.prevDetails || element.prevReason) && (
-                <>
-                  <h4>Additional details / variations</h4>
-                  <p>
-                    Previous revision reasoning:{" "}
-                    <span>{element.prevReason.toLocaleLowerCase()}</span>
-                  </p>
-                  {element.prevDetails && (
-                    <Collapsible details={element.prevDetails} />
-                  )}
-                </>
+                <h4>Additional details / variations</h4>
+              )}
+              {element.prevReason && element.reason ? (
+                <p>
+                  Reasoning:{" "}
+                  <ComparatorDiff
+                    previous={element.prevReason.toLocaleLowerCase()}
+                    current={element.reason.toLocaleLowerCase()}
+                  />
+                </p>
+              ) : (
+                <p>
+                  Reasoning: <span>{element?.reason.toLocaleLowerCase()}</span>
+                </p>
+              )}
+              {Array.isArray(element.details) && (
+                <Collapsible
+                  details={element.details}
+                  prevDetails={element.prevDetails}
+                />
               )}
             </div>
             <hr />
