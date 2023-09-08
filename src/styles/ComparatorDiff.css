@@ -1,0 +1,9 @@
+.text-addition {
+  background-color: #acf2bd;
+}
+
+.text-removal {
+  background-color: #fdb8c0;
+  text-decoration: line-through;
+  text-decoration-thickness: -2px;
+}
