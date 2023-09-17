@@ -9,7 +9,7 @@ describe("Get Scorecard Url", () => {
   };
   it("Should return the scorecard url", () => {
     expect(getScorecardUrl(params)).toBe(
-      "https://api.securityscorecards.dev/projects/github.com/nodejs/node"
+      "https://api.securityscorecards.dev/projects/github.com/nodejs/node",
     );
   });
   it("Should return the scorecard url with commit hash", () => {
@@ -17,9 +17,9 @@ describe("Get Scorecard Url", () => {
       getScorecardUrl({
         ...params,
         commitHash: "1cea384480a6dea80128e5e0ddb714df7bea1520",
-      })
+      }),
     ).toBe(
-      "https://api.securityscorecards.dev/projects/github.com/nodejs/node/?commit=1cea384480a6dea80128e5e0ddb714df7bea1520"
+      "https://api.securityscorecards.dev/projects/github.com/nodejs/node/?commit=1cea384480a6dea80128e5e0ddb714df7bea1520",
     );
   });
 });

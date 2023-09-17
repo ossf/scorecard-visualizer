@@ -19,7 +19,7 @@ function ProjectDetails() {
     queryKey: ["projectData"],
     queryFn: async () => {
       const response = await fetch(
-        getScorecardUrl({ platform, org, repo, commitHash })
+        getScorecardUrl({ platform, org, repo, commitHash }),
       );
       if (response.status >= 500) {
         throw new Error("An error ocurred. Invalid response from server");

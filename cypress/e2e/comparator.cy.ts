@@ -5,7 +5,7 @@ describe("Comparator", () => {
       "https://api.securityscorecards.dev/projects/github.com/nodejs/node/?commit=2ac5e9889aba461f5a54d320973d2574980d206b",
       {
         statusCode: 404,
-      }
+      },
     ).as("getDataPreviousCommit");
 
     cy.intercept(
@@ -13,11 +13,11 @@ describe("Comparator", () => {
       "https://api.securityscorecards.dev/projects/github.com/nodejs/node/?commit=077fd7d83d7d41695137c1af5b9be1d72250e69e",
       {
         statusCode: 404,
-      }
+      },
     ).as("getDataCurrentCommit");
 
     cy.visit(
-      "localhost:3000/openssf-scorecard-api-visualizer/#/projects/github.com/nodejs/node/compare/2ac5e9889aba461f5a54d320973d2574980d206b/077fd7d83d7d41695137c1af5b9be1d72250e69e"
+      "localhost:3000/openssf-scorecard-api-visualizer/#/projects/github.com/nodejs/node/compare/2ac5e9889aba461f5a54d320973d2574980d206b/077fd7d83d7d41695137c1af5b9be1d72250e69e",
     );
     cy.wait("@getDataPreviousCommit"); // first try as react query behaves
     cy.wait("@getDataPreviousCommit"); // second try
@@ -27,11 +27,11 @@ describe("Comparator", () => {
     cy.wait("@getDataCurrentCommit"); // third try
     cy.get("h1", { timeout: 10000 }).should(
       "contain",
-      "An error ocurred. Please refresh/try again."
+      "An error ocurred. Please refresh/try again.",
     );
     cy.get("p", { timeout: 10000 }).should(
       "contain",
-      "Please check if the org/repository/commit has been analysed by the Scorecard."
+      "Please check if the org/repository/commit has been analysed by the Scorecard.",
     );
   });
   it("should render error when the previous commit hash does not exist", () => {
@@ -40,7 +40,7 @@ describe("Comparator", () => {
       "https://api.securityscorecards.dev/projects/github.com/nodejs/node/?commit=2ac5e9889aba461f5a54d320973d2574980d206b",
       {
         statusCode: 404,
-      }
+      },
     ).as("getDataPreviousCommit");
 
     cy.intercept(
@@ -49,11 +49,11 @@ describe("Comparator", () => {
       {
         statusCode: 200,
         fixture: "077fd7d83d7d41695137c1af5b9be1d72250e69e.json",
-      }
+      },
     ).as("getDataCurrentCommit");
 
     cy.visit(
-      "localhost:3000/openssf-scorecard-api-visualizer/#/projects/github.com/nodejs/node/compare/2ac5e9889aba461f5a54d320973d2574980d206b/077fd7d83d7d41695137c1af5b9be1d72250e69e"
+      "localhost:3000/openssf-scorecard-api-visualizer/#/projects/github.com/nodejs/node/compare/2ac5e9889aba461f5a54d320973d2574980d206b/077fd7d83d7d41695137c1af5b9be1d72250e69e",
     );
     cy.wait("@getDataPreviousCommit"); // first try as react query behaves
     cy.wait("@getDataPreviousCommit"); // second try
@@ -62,11 +62,11 @@ describe("Comparator", () => {
 
     cy.get("h1", { timeout: 10000 }).should(
       "contain",
-      "An error ocurred. Please refresh/try again."
+      "An error ocurred. Please refresh/try again.",
     );
     cy.get("p", { timeout: 10000 }).should(
       "contain",
-      "Please check if the org/repository/commit has been analysed by the Scorecard."
+      "Please check if the org/repository/commit has been analysed by the Scorecard.",
     );
   });
   it("should render error when the current commit hash does not exist", () => {
@@ -76,7 +76,7 @@ describe("Comparator", () => {
       {
         statusCode: 200,
         fixture: "2ac5e9889aba461f5a54d320973d2574980d206b.json",
-      }
+      },
     ).as("getDataPreviousCommit");
 
     cy.intercept(
@@ -84,11 +84,11 @@ describe("Comparator", () => {
       "https://api.securityscorecards.dev/projects/github.com/nodejs/node/?commit=077fd7d83d7d41695137c1af5b9be1d72250e69e",
       {
         statusCode: 404,
-      }
+      },
     ).as("getDataCurrentCommit");
 
     cy.visit(
-      "localhost:3000/openssf-scorecard-api-visualizer/#/projects/github.com/nodejs/node/compare/2ac5e9889aba461f5a54d320973d2574980d206b/077fd7d83d7d41695137c1af5b9be1d72250e69e"
+      "localhost:3000/openssf-scorecard-api-visualizer/#/projects/github.com/nodejs/node/compare/2ac5e9889aba461f5a54d320973d2574980d206b/077fd7d83d7d41695137c1af5b9be1d72250e69e",
     );
     cy.wait("@getDataPreviousCommit"); // first try as react query behaves
     cy.wait("@getDataCurrentCommit"); // first try as react query behaves
@@ -97,11 +97,11 @@ describe("Comparator", () => {
 
     cy.get("h1", { timeout: 10000 }).should(
       "contain",
-      "An error ocurred. Please refresh/try again."
+      "An error ocurred. Please refresh/try again.",
     );
     cy.get("p", { timeout: 10000 }).should(
       "contain",
-      "Please check if the org/repository/commit has been analysed by the Scorecard."
+      "Please check if the org/repository/commit has been analysed by the Scorecard.",
     );
   });
   it("should compare data from each commit as expected", () => {
@@ -111,7 +111,7 @@ describe("Comparator", () => {
       {
         statusCode: 200,
         fixture: "2ac5e9889aba461f5a54d320973d2574980d206b.json",
-      }
+      },
     ).as("getDataPreviousCommit");
 
     cy.intercept(
@@ -120,23 +120,23 @@ describe("Comparator", () => {
       {
         statusCode: 200,
         fixture: "077fd7d83d7d41695137c1af5b9be1d72250e69e.json",
-      }
+      },
     ).as("getDataCurrentCommit");
 
     cy.visit(
-      "localhost:3000/openssf-scorecard-api-visualizer/#/projects/github.com/nodejs/node/compare/2ac5e9889aba461f5a54d320973d2574980d206b/077fd7d83d7d41695137c1af5b9be1d72250e69e"
+      "localhost:3000/openssf-scorecard-api-visualizer/#/projects/github.com/nodejs/node/compare/2ac5e9889aba461f5a54d320973d2574980d206b/077fd7d83d7d41695137c1af5b9be1d72250e69e",
     );
     cy.wait("@getDataPreviousCommit"); // first try as react query behaves
     cy.wait("@getDataCurrentCommit"); // first try as react query behaves
 
     cy.get("h1").should(
       "contain",
-      "OpenSSF Scorecard comparator for nodejs/node"
+      "OpenSSF Scorecard comparator for nodejs/node",
     );
 
     cy.get('[data-testid="current-score-and-badge"] > h2').should(
       "contain",
-      "Score: 7.3/10"
+      "Score: 7.3/10",
     );
 
     cy.get('[data-testid="current-score-and-badge"] > span')
@@ -146,7 +146,7 @@ describe("Comparator", () => {
 
     cy.get('[data-testid="commits-analysis"]').should(
       "contain",
-      "Analysis of commits (077fd7d8) and (2ac5e988)"
+      "Analysis of commits (077fd7d8) and (2ac5e988)",
     );
 
     cy.get('[data-testid="commits-analysis"] > a:first-child')
@@ -154,7 +154,7 @@ describe("Comparator", () => {
       .and("have.attr", "href")
       .and(
         "include",
-        "https://github.com/nodejs/node/commit/077fd7d83d7d41695137c1af5b9be1d72250e69e"
+        "https://github.com/nodejs/node/commit/077fd7d83d7d41695137c1af5b9be1d72250e69e",
       );
 
     cy.get('[data-testid="commits-analysis"] > a:last-child')
@@ -162,20 +162,20 @@ describe("Comparator", () => {
       .and("have.attr", "href")
       .and(
         "include",
-        "https://github.com/nodejs/node/commit/2ac5e9889aba461f5a54d320973d2574980d206b"
+        "https://github.com/nodejs/node/commit/2ac5e9889aba461f5a54d320973d2574980d206b",
       );
-    
+
     // @TODO: restore when https://github.com/KoolTheba/openssf-scorecard-api-visualizer/actions/runs/5457182231/jobs/9930918315?pr=106 is solved
     // cy.get('[data-testid="date"]').should("contain", "Date: June 8, 2023");
 
     cy.get('[data-testid="scorecard-version"]').should(
       "contain",
-      "Scorecard version v4.10.5 (27cfe92e)"
+      "Scorecard version v4.10.5 (27cfe92e)",
     );
 
     cy.get('[data-testid="Binary-Artifacts"]').should(
       "contain",
-      "Binary-Artifacts"
+      "Binary-Artifacts",
     );
     cy.get('[data-testid="Binary-Artifacts"] > div > span')
       .should("contain", "Unchanged")
@@ -185,7 +185,7 @@ describe("Comparator", () => {
 
     cy.get('[data-testid="Branch-Protection"]').should(
       "contain",
-      "Branch-Protection"
+      "Branch-Protection",
     );
     cy.get('[data-testid="Branch-Protection"] > div > span')
       .should("contain", "Unchanged")
@@ -193,7 +193,7 @@ describe("Comparator", () => {
       .and("eq", "rgb(108, 117, 125)");
     cy.get('[data-testid="Branch-Protection"] > span').should(
       "contain",
-      "-1/10"
+      "-1/10",
     );
 
     cy.get('[data-testid="CI-Tests"]').should("contain", "CI-Tests");
@@ -204,12 +204,12 @@ describe("Comparator", () => {
     cy.get('[data-testid="CI-Tests"] > span').and("contain", "9/10");
     cy.get('[data-testid="CI-Tests"] ~ h4').should(
       "contain",
-      "Additional details / variations"
+      "Additional details / variations",
     );
 
     cy.get('[data-testid="CII-Best-Practices"]').should(
       "contain",
-      "CII-Best-Practices"
+      "CII-Best-Practices",
     );
     cy.get('[data-testid="CII-Best-Practices"] > div > span')
       .should("contain", "Unchanged")
@@ -217,7 +217,7 @@ describe("Comparator", () => {
       .and("eq", "rgb(108, 117, 125)");
     cy.get('[data-testid="CII-Best-Practices"] > span').should(
       "contain",
-      "5/10"
+      "5/10",
     );
 
     cy.get('[data-testid="Code-Review"]').should("contain", "Code-Review");
@@ -228,7 +228,7 @@ describe("Comparator", () => {
     cy.get('[data-testid="Code-Review"] > span').should("contain", "0/10");
     cy.get('[data-testid="Code-Review"] ~ h4').should(
       "contain",
-      "Additional details / variations"
+      "Additional details / variations",
     );
 
     cy.get('[data-testid="Contributors"]').should("contain", "Contributors");
@@ -240,7 +240,7 @@ describe("Comparator", () => {
 
     cy.get('[data-testid="Dangerous-Workflow"]').should(
       "contain",
-      "Dangerous-Workflow"
+      "Dangerous-Workflow",
     );
     cy.get('[data-testid="Dangerous-Workflow"] > div > span')
       .should("contain", "Unchanged")
@@ -248,12 +248,12 @@ describe("Comparator", () => {
       .and("eq", "rgb(108, 117, 125)");
     cy.get('[data-testid="Dangerous-Workflow"] > span').should(
       "contain",
-      "10/10"
+      "10/10",
     );
 
     cy.get('[data-testid="Dependency-Update-Tool"]').should(
       "contain",
-      "Dependency-Update-Tool"
+      "Dependency-Update-Tool",
     );
     cy.get('[data-testid="Dependency-Update-Tool"] > div > span')
       .should("contain", "Unchanged")
@@ -261,7 +261,7 @@ describe("Comparator", () => {
       .and("eq", "rgb(108, 117, 125)");
     cy.get('[data-testid="Dependency-Update-Tool"] > span').should(
       "contain",
-      "10/10"
+      "10/10",
     );
 
     cy.get('[data-testid="Fuzzing"]').should("contain", "Fuzzing");
@@ -286,7 +286,7 @@ describe("Comparator", () => {
     cy.get('[data-testid="Maintained"] > span').should("contain", "10/10");
     cy.get('[data-testid="Maintained"] ~ h4').should(
       "contain",
-      "Additional details / variations"
+      "Additional details / variations",
     );
 
     cy.get('[data-testid="Packaging"]').should("contain", "Packaging");
@@ -298,7 +298,7 @@ describe("Comparator", () => {
 
     cy.get('[data-testid="Pinned-Dependencies"]').should(
       "contain",
-      "Pinned-Dependencies"
+      "Pinned-Dependencies",
     );
     cy.get('[data-testid="Pinned-Dependencies"] > div > span')
       .should("contain", "Unchanged")
@@ -306,11 +306,11 @@ describe("Comparator", () => {
       .and("eq", "rgb(108, 117, 125)");
     cy.get('[data-testid="Pinned-Dependencies"] > span').should(
       "contain",
-      "7/10"
+      "7/10",
     );
     cy.get('[data-testid="Pinned-Dependencies"] ~ h4').should(
       "contain",
-      "Additional details / variations"
+      "Additional details / variations",
     );
 
     cy.get('[data-testid="SAST"]').should("contain", "SAST");
@@ -322,7 +322,7 @@ describe("Comparator", () => {
 
     cy.get('[data-testid="Security-Policy"]').should(
       "contain",
-      "Security-Policy"
+      "Security-Policy",
     );
     cy.get('[data-testid="Security-Policy"] > div > span')
       .should("contain", "Unchanged")
@@ -332,7 +332,7 @@ describe("Comparator", () => {
 
     cy.get('[data-testid="Signed-Releases"]').should(
       "contain",
-      "Signed-Releases"
+      "Signed-Releases",
     );
     cy.get('[data-testid="Signed-Releases"] > div > span')
       .should("contain", "Unchanged")
@@ -342,7 +342,7 @@ describe("Comparator", () => {
 
     cy.get('[data-testid="Token-Permissions"]').should(
       "contain",
-      "Token-Permissions"
+      "Token-Permissions",
     );
     cy.get('[data-testid="Token-Permissions"] > div > span')
       .should("contain", "Unchanged")
@@ -350,16 +350,16 @@ describe("Comparator", () => {
       .and("eq", "rgb(108, 117, 125)");
     cy.get('[data-testid="Token-Permissions"] > span').should(
       "contain",
-      "10/10"
+      "10/10",
     );
     cy.get('[data-testid="Token-Permissions"] ~ h4').should(
       "contain",
-      "Additional details / variations"
+      "Additional details / variations",
     );
 
     cy.get('[data-testid="Vulnerabilities"]').should(
       "contain",
-      "Vulnerabilities"
+      "Vulnerabilities",
     );
     cy.get('[data-testid="Vulnerabilities"] > div > span')
       .should("contain", "Increased 2.7")
@@ -368,7 +368,7 @@ describe("Comparator", () => {
     cy.get('[data-testid="Vulnerabilities"] > span').should("contain", "10/10");
     cy.get('[data-testid="Vulnerabilities"] ~ h4').should(
       "contain",
-      "Additional details / variations"
+      "Additional details / variations",
     );
   });
 });
