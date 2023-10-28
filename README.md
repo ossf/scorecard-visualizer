@@ -33,14 +33,13 @@ The Visualizer is part of the [OpenSSF Scorecard Monitor](https://github.com/Uli
     </div>
 </br>
 
-**Support to GitLab repositories:** The project provides support of visualization and diff comparation for GitLab projects. In the GitLab version, deps.dev and step security links are not included, as those platforms don't support GitLab projects yet. 
+**Support to GitLab repositories:** The project provides support of visualization and diff comparation for GitLab projects. In the GitLab version, deps.dev and step security links are not included, as those platforms don't support GitLab projects yet.
 
 <br>
     <div>
         <img src='.github/other/gitlab-support.png' alt="visualizer-for-gitlab-repos"/>
     </div>
 </br>
-
 
 ## How to use it
 

@@ -1,1 +1,1 @@
-export const GITHUB = 'github.com'
+export const GITHUB = "github.com";

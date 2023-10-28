@@ -64,7 +64,7 @@ function ProjectDetails() {
       </p>
       {platform === GITHUB && (
         <>
-           <p data-testid="deps-dev">
+          <p data-testid="deps-dev">
             Additional info at{" "}
             <a
               href={`https://deps.dev/project/github/${org}%2F${repo}`}

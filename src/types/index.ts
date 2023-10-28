@@ -10,14 +10,14 @@ export interface ScoreElement {
 }
 
 export interface ConsolidatedScoreElement {
-  areEqual: boolean,
-  name: string,
-  details: string[],
-  reason: string,
-  score: number,
-  short: string,
-  url: string,
-  prevDetails: string[],
-  prevReason: string,
-  prevScore: number,
+  areEqual: boolean;
+  name: string;
+  details: string[];
+  reason: string;
+  score: number;
+  short: string;
+  url: string;
+  prevDetails: string[];
+  prevReason: string;
+  prevScore: number;
 }
