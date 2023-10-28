@@ -41,6 +41,14 @@ The Visualizer is part of the [OpenSSF Scorecard Monitor](https://github.com/Uli
     </div>
 </br>
 
+**Discrepancies management:** The Scorecard API can provide discrepancies in the data while comparing between two commits due [technical reasons](https://github.com/ossf/scorecard/issues/3438). The visualizer provides a way to showcase the discrepancies found.
+
+<br>
+    <div>
+        <img src='.github/other/discrepancies.png' alt="discrepancies preview"/>
+    </div>
+</br>
+
 ## How to use it
 
 The Visualizer and the Comparator can be used outside the Monitor.
