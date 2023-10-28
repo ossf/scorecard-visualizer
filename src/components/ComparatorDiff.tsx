@@ -7,7 +7,7 @@ type Props = {
 };
 
 export const ComparatorDiff = (props: Props) => {
-  const diff = Diff.diffWordsWithSpace(props.previous, props.current);
+  const diff = Diff.diffLines(props.previous, props.current);
   return (
     <>
       {diff.map((part: any, i: number) => (
