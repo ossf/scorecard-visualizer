@@ -9,6 +9,8 @@ import Collapsible from "./Collapsable";
 import Loading from "./Loading";
 import { ComparatorDiff } from "./ComparatorDiff";
 import { ScoreElement, ConsolidatedScoreElement } from "../types";
+import { getRefinedChecks } from "../utils/comparator/getRefinedChecks";
+import { areEqualElements } from "../utils/comparator/areEqualElements";
 
 import "../styles/ProjectDetails.css";
 
@@ -16,7 +18,9 @@ function ProjectComparator() {
   const params = useParams();
   const { platform, org, repo, prevCommitHash, currentCommitHash } = params;
 
-  const [state, setState] = useState([]);
+  const [consolidatedData, setConsolidatedData] = useState<
+    ConsolidatedScoreElement[]
+  >([]);
 
   const prevCommitQuery = useQuery({
     queryKey: ["prevCommit"],
@@ -54,40 +58,33 @@ function ProjectComparator() {
       if (!previousData?.checks || !previousData?.score) {
         return;
       }
-      consolidatedData = currentData?.checks?.map(
-        (e1: ScoreElement, index: number) => {
-          if (
-            JSON.stringify(e1.details) !==
-              JSON.stringify(previousData?.checks[index].details) ||
-            JSON.stringify(e1.reason) !==
-              JSON.stringify(previousData?.checks[index].reason)
-          ) {
-            return {
-              areEqual: false,
-              name: previousData.checks[index].name,
-              details: e1.details,
-              reason: e1.reason,
-              score: e1.score,
-              short: e1.documentation.short,
-              url: e1.documentation.url,
-              prevDetails: previousData.checks[index].details,
-              prevReason: previousData.checks[index].reason,
-              prevScore: previousData.checks[index].score,
-            };
-          } else {
-            return {
-              areEqual: true,
-              name: e1.name,
-              details: e1.details,
-              reason: e1.reason,
-              score: e1.score,
-              short: e1.documentation.short,
-              url: e1.documentation.url,
-            };
-          }
-        },
+
+      const { common } = getRefinedChecks(
+        previousData?.checks,
+        currentData?.checks,
       );
-      setState(consolidatedData);
+
+      consolidatedData = common.map((name: string) => {
+        const previousElement = previousData?.checks?.filter(
+          (el: ScoreElement) => el.name === name,
+        )[0];
+        const currentElement = currentData?.checks?.filter(
+          (el: ScoreElement) => el.name === name,
+        )[0];
+        return {
+          areEqual: areEqualElements(currentElement, previousElement),
+          name: previousElement.name,
+          details: currentElement.details,
+          reason: currentElement.reason,
+          score: currentElement.score,
+          short: currentElement.documentation.short,
+          url: currentElement.documentation.url,
+          prevDetails: previousElement.details,
+          prevReason: previousElement.reason,
+          prevScore: previousElement.score,
+        };
+      });
+      setConsolidatedData(consolidatedData);
     };
     areEqualDetails();
   }, [currentData, previousData]);
@@ -140,8 +137,8 @@ function ProjectComparator() {
         </a>
       </p>
       <hr />
-      {Array.isArray(state) &&
-        state.map((element:ConsolidatedScoreElement) => (
+      {Array.isArray(consolidatedData) &&
+        consolidatedData.map((element: ConsolidatedScoreElement) => (
           <>
             <div key={element.name} className="card__wrapper">
               <div data-testid={element.name} className="heading__wrapper">
@@ -157,10 +154,8 @@ function ProjectComparator() {
                   See documentation
                 </a>
               </p>
-              {(element.prevDetails || element.prevReason) && (
-                <h4>Additional details / variations</h4>
-              )}
-              {element.prevReason && element.reason ? (
+              {!element.areEqual && <h4>Additional details / variations</h4>}
+              {!element.areEqual ? (
                 <p>
                   Reasoning:{" "}
                   <ComparatorDiff
