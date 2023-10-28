@@ -113,7 +113,7 @@ function ProjectComparator() {
       <p data-testid="commits-analysis">
         Analysis of commits{" "}
         <a
-          href={`https://github.com/${org}/${repo}/commit/${currentData.repo.commit}`}
+          href={`https://${platform}/${org}/${repo}/commit/${currentData.repo.commit}`}
           target="_blank"
           rel="noreferrer"
         >
@@ -121,7 +121,7 @@ function ProjectComparator() {
         </a>{" "}
         and{" "}
         <a
-          href={`https://github.com/${org}/${repo}/commit/${previousData.repo.commit}`}
+          href={`https://${platform}/${org}/${repo}/commit/${previousData.repo.commit}`}
           target="_blank"
           rel="noreferrer"
         >
