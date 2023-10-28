@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/openssf-scorecard-api-visualizer/static/css/main.349bf696.css",
-    "main.js": "/openssf-scorecard-api-visualizer/static/js/main.6346d203.js",
+    "main.js": "/openssf-scorecard-api-visualizer/static/js/main.9119d34a.js",
     "static/js/496.ea8e86bd.chunk.js": "/openssf-scorecard-api-visualizer/static/js/496.ea8e86bd.chunk.js",
     "index.html": "/openssf-scorecard-api-visualizer/index.html",
     "main.349bf696.css.map": "/openssf-scorecard-api-visualizer/static/css/main.349bf696.css.map",
-    "main.6346d203.js.map": "/openssf-scorecard-api-visualizer/static/js/main.6346d203.js.map",
+    "main.9119d34a.js.map": "/openssf-scorecard-api-visualizer/static/js/main.9119d34a.js.map",
     "496.ea8e86bd.chunk.js.map": "/openssf-scorecard-api-visualizer/static/js/496.ea8e86bd.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.349bf696.css",
-    "static/js/main.6346d203.js"
+    "static/js/main.9119d34a.js"
   ]
 }
