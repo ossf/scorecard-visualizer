@@ -54,7 +54,7 @@ function ProjectDetails() {
       <p data-testid="current-commit">
         Current commit{" "}
         <a
-          href={`https://github.com/${org}/${repo}/commit/${data.repo.commit}`}
+          href={`https://${platform}/${org}/${repo}/commit/${data.repo.commit}`}
           target="_blank"
           rel="noreferrer"
         >
