@@ -8,6 +8,7 @@ import Collapsible from "./Collapsable";
 import Loading from "./Loading";
 
 import { ScoreElement } from "../types";
+import { GITHUB } from "../constants/platforms";
 
 import "../styles/ProjectDetails.css";
 
@@ -61,26 +62,31 @@ function ProjectDetails() {
           {`(${data.repo.commit.substring(0, 8)})`}
         </a>
       </p>
-      <p data-testid="deps-dev">
-        Additional info at{" "}
-        <a
-          href={`https://deps.dev/project/github/${org}%2F${repo}`}
-          target="_blank"
-          rel="noreferrer"
-        >
-          deps.dev
-        </a>
-      </p>
-      <p data-testid="step-security">
-        Improve your scoring with{" "}
-        <a
-          href={`https://app.stepsecurity.io/securerepo?repo=${org}/${repo}`}
-          target="_blank"
-          rel="noreferrer"
-        >
-          StepSecurity
-        </a>
-      </p>
+      {platform === GITHUB && (
+        <>
+           <p data-testid="deps-dev">
+            Additional info at{" "}
+            <a
+              href={`https://deps.dev/project/github/${org}%2F${repo}`}
+              target="_blank"
+              rel="noreferrer"
+            >
+              deps.dev
+            </a>
+          </p>
+          <p data-testid="step-security">
+            Improve your scoring with{" "}
+            <a
+              href={`https://app.stepsecurity.io/securerepo?repo=${org}/${repo}`}
+              target="_blank"
+              rel="noreferrer"
+            >
+              StepSecurity
+            </a>
+          </p>
+        </>
+      )}
+
       <hr />
       {data.checks.map((element: ScoreElement) => (
         <>
