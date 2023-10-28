@@ -8,3 +8,16 @@ export interface ScoreElement {
     url: string;
   };
 }
+
+export interface ConsolidatedScoreElement {
+  areEqual: boolean,
+  name: string,
+  details: string[],
+  reason: string,
+  score: number,
+  short: string,
+  url: string,
+  prevDetails: string[],
+  prevReason: string,
+  prevScore: number,
+}

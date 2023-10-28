@@ -8,7 +8,7 @@ import CommonError from "./CommonError";
 import Collapsible from "./Collapsable";
 import Loading from "./Loading";
 import { ComparatorDiff } from "./ComparatorDiff";
-import { ScoreElement } from "../types";
+import { ScoreElement, ConsolidatedScoreElement } from "../types";
 
 import "../styles/ProjectDetails.css";
 
@@ -141,7 +141,7 @@ function ProjectComparator() {
       </p>
       <hr />
       {Array.isArray(state) &&
-        state.map((element: any) => (
+        state.map((element:ConsolidatedScoreElement) => (
           <>
             <div key={element.name} className="card__wrapper">
               <div data-testid={element.name} className="heading__wrapper">
