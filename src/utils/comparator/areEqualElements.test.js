@@ -1,4 +1,4 @@
-import { areEqualElements } from "./areEqualElements.ts";
+import { areEqualElements } from "./areEqualElements.tsx";
 
 const baseScoreElement = {
   name: "foo",

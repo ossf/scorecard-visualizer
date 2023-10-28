@@ -1,5 +1,5 @@
-import { getRefinedChecks } from "./getRefinedChecks.ts";
-import { CHECKS_LIST_NAMES } from "../../constants/checks";
+import { getRefinedChecks } from "./getRefinedChecks.tsx";
+import { CHECKS_LIST_NAMES } from "../../constants/checks.ts";
 import sample1 from "../../../cypress/fixtures/2ac5e9889aba461f5a54d320973d2574980d206b.json";
 import sample2 from "../../../cypress/fixtures/077fd7d83d7d41695137c1af5b9be1d72250e69e.json";
 
