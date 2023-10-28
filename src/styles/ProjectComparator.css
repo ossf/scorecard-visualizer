@@ -1,0 +1,16 @@
+.warning-message {
+  width: auto;
+  padding: 10px;
+  color: white;
+  background-color: #dc3545;
+  /*border: 1px solid orange;*/
+  border-radius: 5px;
+  font-size: 1rem;
+  display: inline-block;
+  font-weight: 600;
+}
+
+.warning-message::before {
+  content: "\1F6A8";
+  margin-right: 4px;
+}

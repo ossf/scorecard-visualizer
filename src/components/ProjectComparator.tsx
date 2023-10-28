@@ -13,6 +13,7 @@ import { getRefinedChecks } from "../utils/comparator/getRefinedChecks";
 import { areEqualElements } from "../utils/comparator/areEqualElements";
 
 import "../styles/ProjectDetails.css";
+import "../styles/ProjectComparator.css";
 
 function ProjectComparator() {
   const params = useParams();
@@ -21,6 +22,7 @@ function ProjectComparator() {
   const [consolidatedData, setConsolidatedData] = useState<
     ConsolidatedScoreElement[]
   >([]);
+  const [discrepancies, setDiscrepancies] = useState<string[]>([]);
 
   const prevCommitQuery = useQuery({
     queryKey: ["prevCommit"],
@@ -53,18 +55,16 @@ function ProjectComparator() {
 
   useEffect(() => {
     const areEqualDetails = () => {
-      let consolidatedData;
-
       if (!previousData?.checks || !previousData?.score) {
         return;
       }
 
-      const { common } = getRefinedChecks(
+      const refinedChecks = getRefinedChecks(
         previousData?.checks,
         currentData?.checks,
       );
 
-      consolidatedData = common.map((name: string) => {
+      const data = refinedChecks.common.map((name: string) => {
         const previousElement = previousData?.checks?.filter(
           (el: ScoreElement) => el.name === name,
         )[0];
@@ -84,7 +84,8 @@ function ProjectComparator() {
           prevScore: previousElement.score,
         };
       });
-      setConsolidatedData(consolidatedData);
+      setConsolidatedData(data);
+      setDiscrepancies(refinedChecks.discrepancies);
     };
     areEqualDetails();
   }, [currentData, previousData]);
@@ -136,6 +137,14 @@ function ProjectComparator() {
           {`(${currentData.scorecard.commit.substring(0, 8)})`}
         </a>
       </p>
+      {discrepancies.length > 0 && (
+        <span
+          className="warning-message"
+          data-testid="discrepancies"
+        >{`The report doesn't display certain checks (such as ${discrepancies.join(
+          ", ",
+        )}) because they haven't been included in the analysis of both commits.`}</span>
+      )}
       <hr />
       {Array.isArray(consolidatedData) &&
         consolidatedData.map((element: ConsolidatedScoreElement) => (
