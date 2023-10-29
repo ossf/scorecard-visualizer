@@ -13,7 +13,6 @@ import { getRefinedChecks } from "../utils/comparator/getRefinedChecks";
 import { areEqualElements } from "../utils/comparator/areEqualElements";
 
 import "../styles/ProjectDetails.css";
-import "../styles/ProjectComparator.css";
 
 function ProjectComparator() {
   const params = useParams();
@@ -138,12 +137,16 @@ function ProjectComparator() {
         </a>
       </p>
       {discrepancies.length > 0 && (
-        <span
-          className="warning-message"
-          data-testid="discrepancies"
-        >{`The report doesn't display certain checks (such as ${discrepancies.join(
-          ", ",
-        )}) because they haven't been included in the analysis of both commits.`}</span>
+        <span className="warning-message" data-testid="discrepancies">
+          {`Scorecard API missing: ${discrepancies.join(", ")} checks. See `}
+          <a
+            href="https://github.com/KoolTheba/openssf-scorecard-api-visualizer/tree/main#discrepancies-management"
+            target="_blank"
+            rel="noreferrer"
+          >
+            details
+          </a>
+        </span>
       )}
       <hr />
       {Array.isArray(consolidatedData) &&
