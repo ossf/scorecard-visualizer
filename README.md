@@ -6,7 +6,9 @@ The Visualizer is part of the [OpenSSF Scorecard Monitor](https://github.com/Uli
 
 ## Features
 
-**Scorecard Data Visualizer:** Display the OpenSSF Scorecard data in a visual format for easy understanding and analysis.
+### Scorecard Data Visualizer
+
+Display the OpenSSF Scorecard data in a visual format for easy understanding and analysis.
 
 <br>
     <div>
@@ -14,7 +16,9 @@ The Visualizer is part of the [OpenSSF Scorecard Monitor](https://github.com/Uli
     </div>
 </br>
 
-**Scorecard Data Comparator:** Compare between two commits that reported Scorecard data. See how the scores changed and further details.
+### Scorecard Data Comparator
+
+Compare between two commits that reported Scorecard data. See how the scores changed and further details.
 
 <br>
     <div>
@@ -22,7 +26,9 @@ The Visualizer is part of the [OpenSSF Scorecard Monitor](https://github.com/Uli
     </div>
 </br>
 
-**Scorecard Data Comparator Diff:** Makes easier the visualization of the differences in the Scorecard comparator reasoning and details.
+### Scorecard Data Comparator Diff
+
+Makes easier the visualization of the differences in the Scorecard comparator reasoning and details.
 
 <br>
     <div>
@@ -33,7 +39,9 @@ The Visualizer is part of the [OpenSSF Scorecard Monitor](https://github.com/Uli
     </div>
 </br>
 
-**Support to GitLab repositories:** The project provides support of visualization and diff comparation for GitLab projects. In the GitLab version, deps.dev and step security links are not included, as those platforms don't support GitLab projects yet.
+### Support to GitLab repositories
+
+The project provides support of visualization and diff comparation for GitLab projects. In the GitLab version, deps.dev and step security links are not included, as those platforms don't support GitLab projects yet.
 
 <br>
     <div>
@@ -41,7 +49,9 @@ The Visualizer is part of the [OpenSSF Scorecard Monitor](https://github.com/Uli
     </div>
 </br>
 
-**Discrepancies management:** The Scorecard API can provide discrepancies in the data while comparing between two commits due [technical reasons](https://github.com/ossf/scorecard/issues/3438). The visualizer provides a way to showcase the discrepancies found.
+### Discrepancies management
+
+The Scorecard API can provide discrepancies in the data while comparing between two commits due [technical reasons](https://github.com/ossf/scorecard/issues/3438). The visualizer provides a way to showcase the discrepancies found.
 
 <br>
     <div>
