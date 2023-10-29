@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/openssf-scorecard-api-visualizer/static/css/main.349bf696.css",
-    "main.js": "/openssf-scorecard-api-visualizer/static/js/main.1ba9dba4.js",
+    "main.css": "/openssf-scorecard-api-visualizer/static/css/main.6a3bdc2f.css",
+    "main.js": "/openssf-scorecard-api-visualizer/static/js/main.0b2666be.js",
     "static/js/496.ea8e86bd.chunk.js": "/openssf-scorecard-api-visualizer/static/js/496.ea8e86bd.chunk.js",
     "index.html": "/openssf-scorecard-api-visualizer/index.html",
-    "main.349bf696.css.map": "/openssf-scorecard-api-visualizer/static/css/main.349bf696.css.map",
-    "main.1ba9dba4.js.map": "/openssf-scorecard-api-visualizer/static/js/main.1ba9dba4.js.map",
+    "main.6a3bdc2f.css.map": "/openssf-scorecard-api-visualizer/static/css/main.6a3bdc2f.css.map",
+    "main.0b2666be.js.map": "/openssf-scorecard-api-visualizer/static/js/main.0b2666be.js.map",
     "496.ea8e86bd.chunk.js.map": "/openssf-scorecard-api-visualizer/static/js/496.ea8e86bd.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.349bf696.css",
-    "static/js/main.1ba9dba4.js"
+    "static/css/main.6a3bdc2f.css",
+    "static/js/main.0b2666be.js"
   ]
 }
