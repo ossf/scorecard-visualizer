@@ -7,7 +7,7 @@ import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import NotFound from "./components/NotFound";
 import CommonError from "./components/CommonError";
 import ProjectDetails from "./components/ProjectDetails";
-import ProjectComparator from "./components/ProjectCompartor";
+import ProjectComparator from "./components/ProjectComparator";
 
 import reportWebVitals from "./reportWebVitals";
 import "./index.css";

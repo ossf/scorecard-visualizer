@@ -100,3 +100,15 @@ a:hover {
   flex-direction: row;
   align-items: center;
 }
+
+.warning-message {
+  width: auto;
+  padding: 10px;
+  color: black;
+  background-color: orange;
+  border-radius: 5px;
+  font-size: 1rem;
+  display: inline-block;
+  font-weight: 600;
+  line-height: 1.5rem;
+}
