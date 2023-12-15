@@ -6,7 +6,7 @@ import { formatDate } from "../utils/formatDate";
 import CommonError from "./CommonError";
 import Collapsible from "./Collapsable";
 import Loading from "./Loading";
-
+import NoAvailableDataMark from "./NoAvailableDataMark";
 import { ScoreElement } from "../types";
 import { GITHUB } from "../constants/platforms";
 
@@ -93,7 +93,11 @@ function ProjectDetails() {
           <div key={element.name} className="card__wrapper">
             <div className="heading__wrapper" data-testid={element.name}>
               <h3>{element.name}</h3>
-              <span>{element.score}/10</span>
+              {element.score !== -1 ? (
+                <span>{element.score}/10</span>
+              ) : (
+                <NoAvailableDataMark />
+              )}
             </div>
             <p>
               Description: {element.documentation.short.toLocaleLowerCase()}{" "}
