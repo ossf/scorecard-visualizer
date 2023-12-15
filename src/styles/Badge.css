@@ -1,10 +1,11 @@
 .badge {
   width: auto;
   padding: 0.4rem;
+  margin-right: 1rem;
   color: white;
   background-color: #6c757d;
   border-radius: 5px;
-  font-size: 1rem;
+  font-size: 14px;
   display: inline-block;
   font-weight: 600;
 }

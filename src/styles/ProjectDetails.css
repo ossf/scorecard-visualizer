@@ -43,7 +43,6 @@ hr {
 div > div > span {
   font-size: 24px;
   font-weight: bold;
-  color: #007bff;
 }
 
 div > div > div {
@@ -96,8 +95,15 @@ a:hover {
 }
 
 .info-badge__wrapper {
+  width: 100%;
   display: flex;
   flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.info-score__wrapper {
+  display: flex;
   align-items: center;
 }
 
