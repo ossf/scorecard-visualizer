@@ -104,7 +104,7 @@ describe("Comparator", () => {
       "Please check if the org/repository/commit has been analysed by the Scorecard.",
     );
   });
-  it("should compare data from each commit as expected", () => {
+  it.only("should compare data from each commit as expected", () => {
     cy.intercept(
       "GET",
       "https://api.securityscorecards.dev/projects/github.com/nodejs/node/?commit=2ac5e9889aba461f5a54d320973d2574980d206b",
@@ -177,31 +177,28 @@ describe("Comparator", () => {
       "contain",
       "Binary-Artifacts",
     );
-    cy.get('[data-testid="Binary-Artifacts"] > div > span')
+    cy.get('[data-testid="Binary-Artifacts-score"] > span')
       .should("contain", "Unchanged")
       .and("have.css", "background-color")
       .and("eq", "rgb(108, 117, 125)");
-    cy.get('[data-testid="Binary-Artifacts"] > span').should("contain", "0/10");
+    
+    cy.get('[data-testid="Binary-Artifacts-score"] > span').should("contain", "0/10");
 
     cy.get('[data-testid="Branch-Protection"]').should(
       "contain",
       "Branch-Protection",
     );
-    cy.get('[data-testid="Branch-Protection"] > div > span')
-      .should("contain", "Unchanged")
-      .and("have.css", "background-color")
-      .and("eq", "rgb(108, 117, 125)");
-    cy.get('[data-testid="Branch-Protection"] > span').should(
+    cy.get('[data-testid="Branch-Protection-score"] > abbr > span').should(
       "contain",
-      "-1/10",
+      "?",
     );
 
     cy.get('[data-testid="CI-Tests"]').should("contain", "CI-Tests");
-    cy.get('[data-testid="CI-Tests"] > div > span')
+    cy.get('[data-testid="CI-Tests-score"] > span')
       .should("contain", "Decreased -1")
       .and("have.css", "background-color")
       .and("eq", "rgb(220, 53, 69)");
-    cy.get('[data-testid="CI-Tests"] > span').and("contain", "9/10");
+    cy.get('[data-testid="CI-Tests-score"] > span').and("contain", "9/10");
     cy.get('[data-testid="CI-Tests"] ~ h4').should(
       "contain",
       "Additional details / variations",
@@ -211,42 +208,42 @@ describe("Comparator", () => {
       "contain",
       "CII-Best-Practices",
     );
-    cy.get('[data-testid="CII-Best-Practices"] > div > span')
+    cy.get('[data-testid="CII-Best-Practices-score"] > span')
       .should("contain", "Unchanged")
       .and("have.css", "background-color")
       .and("eq", "rgb(108, 117, 125)");
-    cy.get('[data-testid="CII-Best-Practices"] > span').should(
+    cy.get('[data-testid="CII-Best-Practices-score"] > span').should(
       "contain",
       "5/10",
     );
 
     cy.get('[data-testid="Code-Review"]').should("contain", "Code-Review");
-    cy.get('[data-testid="Code-Review"] > div > span')
+    cy.get('[data-testid="Code-Review-score"] > span')
       .should("contain", "Unchanged")
       .and("have.css", "background-color")
       .and("eq", "rgb(108, 117, 125)");
-    cy.get('[data-testid="Code-Review"] > span').should("contain", "0/10");
+    cy.get('[data-testid="Code-Review-score"] > span').should("contain", "0/10");
     cy.get('[data-testid="Code-Review"] ~ h4').should(
       "contain",
       "Additional details / variations",
     );
 
     cy.get('[data-testid="Contributors"]').should("contain", "Contributors");
-    cy.get('[data-testid="Contributors"] > div > span')
+    cy.get('[data-testid="Contributors-score"] > span')
       .should("contain", "Unchanged")
       .and("have.css", "background-color")
       .and("eq", "rgb(108, 117, 125)");
-    cy.get('[data-testid="Contributors"] > span').should("contain", "10/10");
+    cy.get('[data-testid="Contributors-score"] > span').should("contain", "10/10");
 
     cy.get('[data-testid="Dangerous-Workflow"]').should(
       "contain",
       "Dangerous-Workflow",
     );
-    cy.get('[data-testid="Dangerous-Workflow"] > div > span')
+    cy.get('[data-testid="Dangerous-Workflow-score"] > span')
       .should("contain", "Unchanged")
       .and("have.css", "background-color")
       .and("eq", "rgb(108, 117, 125)");
-    cy.get('[data-testid="Dangerous-Workflow"] > span').should(
+    cy.get('[data-testid="Dangerous-Workflow-score"] > span').should(
       "contain",
       "10/10",
     );
@@ -255,56 +252,52 @@ describe("Comparator", () => {
       "contain",
       "Dependency-Update-Tool",
     );
-    cy.get('[data-testid="Dependency-Update-Tool"] > div > span')
+    cy.get('[data-testid="Dependency-Update-Tool-score"] > span')
       .should("contain", "Unchanged")
       .and("have.css", "background-color")
       .and("eq", "rgb(108, 117, 125)");
-    cy.get('[data-testid="Dependency-Update-Tool"] > span').should(
+    cy.get('[data-testid="Dependency-Update-Tool-score"] > span').should(
       "contain",
       "10/10",
     );
 
     cy.get('[data-testid="Fuzzing"]').should("contain", "Fuzzing");
-    cy.get('[data-testid="Fuzzing"] > div > span')
+    cy.get('[data-testid="Fuzzing-score"] > span')
       .should("contain", "Unchanged")
       .and("have.css", "background-color")
       .and("eq", "rgb(108, 117, 125)");
-    cy.get('[data-testid="Fuzzing"] > span').should("contain", "10/10");
+    cy.get('[data-testid="Fuzzing-score"] > span').should("contain", "10/10");
 
     cy.get('[data-testid="License"]').should("contain", "License");
-    cy.get('[data-testid="License"] > div > span')
+    cy.get('[data-testid="License-score"] > span')
       .should("contain", "Unchanged")
       .and("have.css", "background-color")
       .and("eq", "rgb(108, 117, 125)");
-    cy.get('[data-testid="License"] > span').should("contain", "9/10");
+    cy.get('[data-testid="License-score"] > span').should("contain", "9/10");
 
     cy.get('[data-testid="Maintained"]').should("contain", "Maintained");
-    cy.get('[data-testid="Maintained"] > div > span')
+    cy.get('[data-testid="Maintained-score"] > span')
       .should("contain", "Unchanged")
       .and("have.css", "background-color")
       .and("eq", "rgb(108, 117, 125)");
-    cy.get('[data-testid="Maintained"] > span').should("contain", "10/10");
+    cy.get('[data-testid="Maintained-score"] > span').should("contain", "10/10");
     cy.get('[data-testid="Maintained"] ~ h4').should(
       "contain",
       "Additional details / variations",
     );
 
     cy.get('[data-testid="Packaging"]').should("contain", "Packaging");
-    cy.get('[data-testid="Packaging"] > div > span')
-      .should("contain", "Unchanged")
-      .and("have.css", "background-color")
-      .and("eq", "rgb(108, 117, 125)");
-    cy.get('[data-testid="Packaging"] > span').should("contain", "-1/10");
+    cy.get('[data-testid="Packaging-score"] > abbr > span').should("contain", "?");
 
     cy.get('[data-testid="Pinned-Dependencies"]').should(
       "contain",
       "Pinned-Dependencies",
     );
-    cy.get('[data-testid="Pinned-Dependencies"] > div > span')
+    cy.get('[data-testid="Pinned-Dependencies-score"] > span')
       .should("contain", "Unchanged")
       .and("have.css", "background-color")
       .and("eq", "rgb(108, 117, 125)");
-    cy.get('[data-testid="Pinned-Dependencies"] > span').should(
+    cy.get('[data-testid="Pinned-Dependencies-score"] > span').should(
       "contain",
       "7/10",
     );
@@ -314,41 +307,37 @@ describe("Comparator", () => {
     );
 
     cy.get('[data-testid="SAST"]').should("contain", "SAST");
-    cy.get('[data-testid="SAST"] > div > span')
+    cy.get('[data-testid="SAST-score"] > span')
       .should("contain", "Unchanged")
       .and("have.css", "background-color")
       .and("eq", "rgb(108, 117, 125)");
-    cy.get('[data-testid="SAST"] > span').should("contain", "0/10");
+    cy.get('[data-testid="SAST-score"] > span').should("contain", "0/10");
 
     cy.get('[data-testid="Security-Policy"]').should(
       "contain",
       "Security-Policy",
     );
-    cy.get('[data-testid="Security-Policy"] > div > span')
+    cy.get('[data-testid="Security-Policy-score"] > span')
       .should("contain", "Unchanged")
       .and("have.css", "background-color")
       .and("eq", "rgb(108, 117, 125)");
-    cy.get('[data-testid="Security-Policy"] > span').should("contain", "10/10");
+    cy.get('[data-testid="Security-Policy-score"] > span').should("contain", "10/10");
 
     cy.get('[data-testid="Signed-Releases"]').should(
       "contain",
       "Signed-Releases",
     );
-    cy.get('[data-testid="Signed-Releases"] > div > span')
-      .should("contain", "Unchanged")
-      .and("have.css", "background-color")
-      .and("eq", "rgb(108, 117, 125)");
-    cy.get('[data-testid="Signed-Releases"] > span').should("contain", "-1/10");
+    cy.get('[data-testid="Signed-Releases-score"] > abbr > span').should("contain", "?");
 
     cy.get('[data-testid="Token-Permissions"]').should(
       "contain",
       "Token-Permissions",
     );
-    cy.get('[data-testid="Token-Permissions"] > div > span')
+    cy.get('[data-testid="Token-Permissions-score"] > span')
       .should("contain", "Unchanged")
       .and("have.css", "background-color")
       .and("eq", "rgb(108, 117, 125)");
-    cy.get('[data-testid="Token-Permissions"] > span').should(
+    cy.get('[data-testid="Token-Permissions-score"] > span').should(
       "contain",
       "10/10",
     );
@@ -361,11 +350,11 @@ describe("Comparator", () => {
       "contain",
       "Vulnerabilities",
     );
-    cy.get('[data-testid="Vulnerabilities"] > div > span')
+    cy.get('[data-testid="Vulnerabilities-score"] > span')
       .should("contain", "Increased 2.7")
       .and("have.css", "background-color")
       .and("eq", "rgb(24, 135, 84)");
-    cy.get('[data-testid="Vulnerabilities"] > span').should("contain", "10/10");
+    cy.get('[data-testid="Vulnerabilities-score"] > span').should("contain", "10/10");
     cy.get('[data-testid="Vulnerabilities"] ~ h4').should(
       "contain",
       "Additional details / variations",

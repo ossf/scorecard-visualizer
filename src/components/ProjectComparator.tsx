@@ -154,7 +154,7 @@ function ProjectComparator() {
               <div data-testid={element.name} className="heading__wrapper">
                 <div className="info-badge__wrapper">
                   <h3>{element.name}</h3>
-                  <div className="info-score__wrapper">
+                  <div data-testid={`${element.name}-score`} className="info-score__wrapper">
                     {element.score >= 0 ? (
                       <>
                         {scoreChecker(element.score, element.prevScore)}

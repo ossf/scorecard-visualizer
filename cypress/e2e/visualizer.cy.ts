@@ -119,7 +119,7 @@ describe("Visualizer", () => {
       .and("contain", "0/10");
     cy.get('[data-testid="Branch-Protection"]')
       .should("contain", "Branch-Protection")
-      .and("contain", "-1/10");
+      .and("contain", "?");
     cy.get('[data-testid="CI-Tests"]')
       .should("contain", "CI-Tests")
       .and("contain", "9/10");
@@ -149,7 +149,7 @@ describe("Visualizer", () => {
       .and("contain", "10/10");
     cy.get('[data-testid="Packaging"]')
       .should("contain", "Packaging")
-      .and("contain", "-1/10");
+      .and("contain", "?");
     cy.get('[data-testid="Pinned-Dependencies"]')
       .should("contain", "Pinned-Dependencies")
       .and("contain", "7/10");
@@ -161,7 +161,7 @@ describe("Visualizer", () => {
       .and("contain", "10/10");
     cy.get('[data-testid="Signed-Releases"]')
       .should("contain", "Signed-Releases")
-      .and("contain", "-1/10");
+      .and("contain", "?");
     cy.get('[data-testid="Token-Permissions"]')
       .should("contain", "Token-Permissions")
       .and("contain", "10/10");
@@ -239,7 +239,7 @@ describe("Visualizer", () => {
       .and("contain", "0/10");
     cy.get('[data-testid="Branch-Protection"]')
       .should("contain", "Branch-Protection")
-      .and("contain", "-1/10");
+      .and("contain", "?");
     cy.get('[data-testid="CI-Tests"]')
       .should("contain", "CI-Tests")
       .and("contain", "9/10");
@@ -269,7 +269,7 @@ describe("Visualizer", () => {
       .and("contain", "10/10");
     cy.get('[data-testid="Packaging"]')
       .should("contain", "Packaging")
-      .and("contain", "-1/10");
+      .and("contain", "?");
     cy.get('[data-testid="Pinned-Dependencies"]')
       .should("contain", "Pinned-Dependencies")
       .and("contain", "7/10");
@@ -281,7 +281,7 @@ describe("Visualizer", () => {
       .and("contain", "10/10");
     cy.get('[data-testid="Signed-Releases"]')
       .should("contain", "Signed-Releases")
-      .and("contain", "-1/10");
+      .and("contain", "?");
     cy.get('[data-testid="Token-Permissions"]')
       .should("contain", "Token-Permissions")
       .and("contain", "10/10");
