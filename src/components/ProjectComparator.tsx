@@ -7,6 +7,7 @@ import { scoreChecker } from "../utils/comparator/scoreChecker";
 import CommonError from "./CommonError";
 import Collapsible from "./Collapsable";
 import Loading from "./Loading";
+import NoAvailableDataMark from "./NoAvailableDataMark";
 import { ComparatorDiff } from "./ComparatorDiff";
 import { ScoreElement, ConsolidatedScoreElement } from "../types";
 import { getRefinedChecks } from "../utils/comparator/getRefinedChecks";
@@ -100,10 +101,7 @@ function ProjectComparator() {
   return (
     <>
       <h1>OpenSSF Scorecard comparator for {`${org}/${repo}`}</h1>
-      <div
-        data-testid="current-score-and-badge"
-        className="info-badge__wrapper"
-      >
+      <div data-testid="current-score-and-badge" className="score-wrapper">
         <h2>{`Current Score: ${currentData.score}/10`} </h2>
         {scoreChecker(currentData.score, previousData.score)}
       </div>
@@ -156,10 +154,19 @@ function ProjectComparator() {
               <div data-testid={element.name} className="heading__wrapper">
                 <div className="info-badge__wrapper">
                   <h3>{element.name}</h3>
-                  {scoreChecker(element.score, element.prevScore)}
+                  <div data-testid={`${element.name}-score`} className="info-score__wrapper">
+                    {element.score >= 0 ? (
+                      <>
+                        {scoreChecker(element.score, element.prevScore)}
+                        <span>{element.score}/10</span>
+                      </>
+                    ) : (
+                      <NoAvailableDataMark />
+                    )}
+                  </div>
                 </div>
-                <span>{element.score}/10</span>
               </div>
+
               <p>
                 Description: {element.short.toLocaleLowerCase()}{" "}
                 <a href={`${element.url}`} target="_blank" rel="noreferrer">
