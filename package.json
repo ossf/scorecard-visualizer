@@ -56,6 +56,6 @@
     "@types/diff": "5.0.9",
     "cypress": "13.6.0",
     "eslint-config-prettier": "9.0.0",
-    "prettier": "3.2.4"
+    "prettier": "3.2.5"
   }
 }
