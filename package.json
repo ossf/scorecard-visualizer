@@ -17,7 +17,7 @@
     "react-dom": "18.2.0",
     "react-router-dom": "6.20.0",
     "react-scripts": "5.0.1",
-    "typescript": "4.9.5",
+    "typescript": "5.4.3",
     "web-vitals": "3.5.0"
   },
   "homepage": "https://kooltheba.github.io/openssf-scorecard-api-visualizer",
