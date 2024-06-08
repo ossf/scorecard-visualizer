@@ -1,11 +1,11 @@
 import Badge from "../../components/Badge";
 
 export const scoreChecker = (currentValue: number, previousValue: number) => {
-  if(currentValue < 0){
+  if (currentValue < 0) {
     currentValue = 0;
   }
 
-  if (previousValue < 0){
+  if (previousValue < 0) {
     previousValue = 0;
   }
 
