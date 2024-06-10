@@ -1,5 +1,5 @@
 {
-  "name": "openssf-scorecard-api-visualizer",
+  "name": "scorecard-visualizer",
   "version": "1.0.0",
   "private": true,
   "dependencies": {

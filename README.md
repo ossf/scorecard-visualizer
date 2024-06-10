@@ -1,4 +1,4 @@
-# openssf-scorecard-api-visualizer
+# OSSF Scorecard Visualizer
 
 The OpenSSF Scorecard Monitor Visualizer is a tool that provides a visual representation of the OpenSSF Scorecard data for monitoring the security status of open source projects. It fetches the scorecard data from the [OpenSSF Scorecard API](https://api.securityscorecards.dev/#/results) and presents it in a user-friendly and interactive visual format.
 
