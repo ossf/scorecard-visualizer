@@ -65,17 +65,17 @@ The Visualizer and the Comparator can be used outside the Monitor.
 
 You have 3 options of visualization. Depending on which one you want to check, you should craft your own url as:
 
-- Checks the latest Scorecard data available for a project: `https://kooltheba.github.io/openssf-scorecard-api-visualizer/#/projects/${platform}/${org}/${repo}`
-- Checks the Scorecard data for an specific commit (previously reported): `https://kooltheba.github.io/openssf-scorecard-api-visualizer/#/projects/${platform}/${org}/${repo}/commit/{commitHash}`
-- Compares two specific commits, previously reported: `https://kooltheba.github.io/openssf-scorecard-api-visualizer/#/projects/github.com/nodejs/node/compare/{prevCommitHash}/{currentCommitHash}`
+- Checks the latest Scorecard data available for a project: `https://ossf.github.io/scorecard-visualizer/#/projects/${platform}/${org}/${repo}`
+- Checks the Scorecard data for an specific commit (previously reported): `https://ossf.github.io/scorecard-visualizer/#/projects/${platform}/${org}/${repo}/commit/{commitHash}`
+- Compares two specific commits, previously reported: `https://ossf.github.io/scorecard-visualizer/#/projects/github.com/nodejs/node/compare/{prevCommitHash}/{currentCommitHash}`
 
 > 👉 Please note that in order to retrieve data from the Scorecard API, it is necessary for organizations or repository owners to report their commits to the Scorecard. However, it's important to keep in mind that not all organizations report their commits, which may result in a `404 error` if the data is not available in the API. Please be aware that this behavior is expected and not indicative of a bug.
 
 ### Examples
 
-- [Nodejs latest repository Scorecard](https://kooltheba.github.io/openssf-scorecard-api-visualizer/#/projects/github.com/nodejs/node)
-- [Nodejs specific commit Scorecard](https://kooltheba.github.io/openssf-scorecard-api-visualizer/#/projects/github.com/nodejs/node/commit/da80964a3d708ef3ae42d4424034f155ad37e07d)
-- [Nodejs reported commits comparation](https://kooltheba.github.io/openssf-scorecard-api-visualizer/#/projects/github.com/nodejs/node/compare/2ac5e9889aba461f5a54d320973d2574980d206b/da80964a3d708ef3ae42d4424034f155ad37e07d)
+- [Nodejs latest repository Scorecard](https://ossf.github.io/scorecard-visualizer/#/projects/github.com/nodejs/node)
+- [Nodejs specific commit Scorecard](https://ossf.github.io/scorecard-visualizer/#/projects/github.com/nodejs/node/commit/da80964a3d708ef3ae42d4424034f155ad37e07d)
+- [Nodejs reported commits comparation](https://ossf.github.io/scorecard-visualizer/#/projects/github.com/nodejs/node/compare/2ac5e9889aba461f5a54d320973d2574980d206b/da80964a3d708ef3ae42d4424034f155ad37e07d)
 
 ## Contributing
 
@@ -94,4 +94,4 @@ This project is licensed under the [Apache License Version 2.0](LICENSE).
 
 ## Support
 
-If you encounter any issues or have questions about the OpenSSF Scorecard Monitor Visualizer, please [open an issue](https://github.com/KoolTheba/openssf-scorecard-api-visualizer/issues/new) on the GitHub repository.
+If you encounter any issues or have questions about the OpenSSF Scorecard Monitor Visualizer, please [open an issue](https://github.com/ossf/scorecard-visualizer/issues/new) on the GitHub repository.

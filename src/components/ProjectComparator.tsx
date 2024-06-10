@@ -138,7 +138,7 @@ function ProjectComparator() {
         <span className="warning-message" data-testid="discrepancies">
           {`Scorecard API missing: ${discrepancies.join(", ")} checks. See `}
           <a
-            href="https://github.com/KoolTheba/openssf-scorecard-api-visualizer/tree/main#discrepancies-management"
+            href="https://github.com/ossf/scorecard-visualizer/tree/main#discrepancies-management"
             target="_blank"
             rel="noreferrer"
           >

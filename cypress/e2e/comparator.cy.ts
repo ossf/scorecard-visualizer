@@ -17,7 +17,7 @@ describe("Comparator", () => {
     ).as("getDataCurrentCommit");
 
     cy.visit(
-      "localhost:3000/openssf-scorecard-api-visualizer/#/projects/github.com/nodejs/node/compare/2ac5e9889aba461f5a54d320973d2574980d206b/077fd7d83d7d41695137c1af5b9be1d72250e69e",
+      "localhost:3000/scorecard-visualizer/#/projects/github.com/nodejs/node/compare/2ac5e9889aba461f5a54d320973d2574980d206b/077fd7d83d7d41695137c1af5b9be1d72250e69e",
     );
     cy.wait("@getDataPreviousCommit"); // first try as react query behaves
     cy.wait("@getDataPreviousCommit"); // second try
@@ -53,7 +53,7 @@ describe("Comparator", () => {
     ).as("getDataCurrentCommit");
 
     cy.visit(
-      "localhost:3000/openssf-scorecard-api-visualizer/#/projects/github.com/nodejs/node/compare/2ac5e9889aba461f5a54d320973d2574980d206b/077fd7d83d7d41695137c1af5b9be1d72250e69e",
+      "localhost:3000/scorecard-visualizer/#/projects/github.com/nodejs/node/compare/2ac5e9889aba461f5a54d320973d2574980d206b/077fd7d83d7d41695137c1af5b9be1d72250e69e",
     );
     cy.wait("@getDataPreviousCommit"); // first try as react query behaves
     cy.wait("@getDataPreviousCommit"); // second try
@@ -88,7 +88,7 @@ describe("Comparator", () => {
     ).as("getDataCurrentCommit");
 
     cy.visit(
-      "localhost:3000/openssf-scorecard-api-visualizer/#/projects/github.com/nodejs/node/compare/2ac5e9889aba461f5a54d320973d2574980d206b/077fd7d83d7d41695137c1af5b9be1d72250e69e",
+      "localhost:3000/scorecard-visualizer/#/projects/github.com/nodejs/node/compare/2ac5e9889aba461f5a54d320973d2574980d206b/077fd7d83d7d41695137c1af5b9be1d72250e69e",
     );
     cy.wait("@getDataPreviousCommit"); // first try as react query behaves
     cy.wait("@getDataCurrentCommit"); // first try as react query behaves
@@ -124,7 +124,7 @@ describe("Comparator", () => {
     ).as("getDataCurrentCommit");
 
     cy.visit(
-      "localhost:3000/openssf-scorecard-api-visualizer/#/projects/github.com/nodejs/node/compare/2ac5e9889aba461f5a54d320973d2574980d206b/077fd7d83d7d41695137c1af5b9be1d72250e69e",
+      "localhost:3000/scorecard-visualizer/#/projects/github.com/nodejs/node/compare/2ac5e9889aba461f5a54d320973d2574980d206b/077fd7d83d7d41695137c1af5b9be1d72250e69e",
     );
     cy.wait("@getDataPreviousCommit"); // first try as react query behaves
     cy.wait("@getDataCurrentCommit"); // first try as react query behaves
@@ -165,7 +165,7 @@ describe("Comparator", () => {
         "https://github.com/nodejs/node/commit/2ac5e9889aba461f5a54d320973d2574980d206b",
       );
 
-    // @TODO: restore when https://github.com/KoolTheba/openssf-scorecard-api-visualizer/actions/runs/5457182231/jobs/9930918315?pr=106 is solved
+    // @TODO: restore when https://github.com/ossf/scorecard-visualizer/actions/runs/5457182231/jobs/9930918315?pr=106 is solved
     // cy.get('[data-testid="date"]').should("contain", "Date: June 8, 2023");
 
     cy.get('[data-testid="scorecard-version"]').should(

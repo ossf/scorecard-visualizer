@@ -9,7 +9,7 @@ describe("Visualizer", () => {
     ).as("getData");
 
     cy.visit(
-      "localhost:3000/openssf-scorecard-api-visualizer/#/projects/github.com/nodejs/node",
+      "localhost:3000/scorecard-visualizer/#/projects/github.com/nodejs/node",
     );
     cy.wait("@getData"); // first try as react query behaves
     cy.wait("@getData"); // second try
@@ -34,7 +34,7 @@ describe("Visualizer", () => {
     ).as("getData");
 
     cy.visit(
-      "localhost:3000/openssf-scorecard-api-visualizer/#/projects/github.com/nodejs/node/commit/19fa9f1bc47b0666be0747583bea8cb3d8ad5eb1",
+      "localhost:3000/scorecard-visualizer/#/projects/github.com/nodejs/node/commit/19fa9f1bc47b0666be0747583bea8cb3d8ad5eb1",
     );
     cy.wait("@getData"); // first try as react query behaves
     cy.wait("@getData"); // second try
@@ -60,7 +60,7 @@ describe("Visualizer", () => {
     ).as("getData");
 
     cy.visit(
-      "localhost:3000/openssf-scorecard-api-visualizer/#/projects/github.com/nodejs/node",
+      "localhost:3000/scorecard-visualizer/#/projects/github.com/nodejs/node",
     );
     cy.wait("@getData");
     cy.get("h1").should("contain", "OpenSSF Scorecard for nodejs/node");
@@ -180,7 +180,7 @@ describe("Visualizer", () => {
     ).as("getData");
 
     cy.visit(
-      "localhost:3000/openssf-scorecard-api-visualizer/#/projects/github.com/nodejs/node/commit/50477fa35367bb76e5f56ac93d661b01a5578cec",
+      "localhost:3000/scorecard-visualizer/#/projects/github.com/nodejs/node/commit/50477fa35367bb76e5f56ac93d661b01a5578cec",
     );
     cy.wait("@getData");
     cy.get("h1").should("contain", "OpenSSF Scorecard for nodejs/node");
