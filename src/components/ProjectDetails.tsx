@@ -12,30 +12,42 @@ import { GITHUB } from "../constants/platforms";
 
 import "../styles/ProjectDetails.css";
 
+import scoredata from '../results.json';
+
+
 function ProjectDetails() {
   const params = useParams();
   const { platform, org, repo, commitHash } = params;
 
-  const { isLoading, error, data } = useQuery({
-    queryKey: ["projectData"],
-    queryFn: async () => {
-      const response = await fetch(
-        getScorecardUrl({ platform, org, repo, commitHash }),
-      );
-      if (response.status >= 500) {
-        throw new Error("An error ocurred. Invalid response from server");
-      }
-      return response.json();
-    },
-  });
+  // const { isLoading, error, data } = useQuery({
+  //     queryKey: ["projectData"],
+  //     queryFn: async () => {
+  //         // const response = await fetch(
+  //         //   getScorecardUrl({ platform, org, repo, commitHash }),
+  //         // );
+  //         // if (response.status >= 500) {
+  //         //   throw new Error("An error ocurred. Invalid response from server");
+  //         // }
+  //         // return response.json();
+  //         const result = scoredata.find((obj: any) => obj.repo.name === platform + '/' + org + '/' + repo);
+  //         if(result === undefined) {
+  //             throw new Error("An error ocurred. Repo not found");
+  //         }
+  //         return result;
+  //     },
+  // });
+    const data = scoredata.find((obj: any) => obj.repo.name === platform + '/' + org + '/' + repo);
+    if(data === undefined) {
+        return <CommonError />;
+    }
 
-  if (isLoading) {
-    return <Loading />;
-  }
+  // if (isLoading) {
+  //   return <Loading />;
+  // }
 
-  if (error) {
-    return <CommonError />;
-  }
+  // if (error) {
+  //   return <CommonError />;
+  // }
 
   return (
     <>
