@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/scorecard-visualizer/static/css/main.7551921e.css",
-    "main.js": "/scorecard-visualizer/static/js/main.2cffdaa2.js",
-    "static/js/496.43371d43.chunk.js": "/scorecard-visualizer/static/js/496.43371d43.chunk.js",
+    "main.css": "/scorecard-visualizer/static/css/main.a335621d.css",
+    "main.js": "/scorecard-visualizer/static/js/main.987f124e.js",
+    "static/js/488.cfa91f5e.chunk.js": "/scorecard-visualizer/static/js/488.cfa91f5e.chunk.js",
     "index.html": "/scorecard-visualizer/index.html",
-    "main.7551921e.css.map": "/scorecard-visualizer/static/css/main.7551921e.css.map",
-    "main.2cffdaa2.js.map": "/scorecard-visualizer/static/js/main.2cffdaa2.js.map",
-    "496.43371d43.chunk.js.map": "/scorecard-visualizer/static/js/496.43371d43.chunk.js.map"
+    "main.a335621d.css.map": "/scorecard-visualizer/static/css/main.a335621d.css.map",
+    "main.987f124e.js.map": "/scorecard-visualizer/static/js/main.987f124e.js.map",
+    "488.cfa91f5e.chunk.js.map": "/scorecard-visualizer/static/js/488.cfa91f5e.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.7551921e.css",
-    "static/js/main.2cffdaa2.js"
+    "static/css/main.a335621d.css",
+    "static/js/main.987f124e.js"
   ]
 }
