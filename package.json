@@ -54,7 +54,7 @@
   },
   "devDependencies": {
     "@types/diff": "7.0.1",
-    "cypress": "15.1.0",
+    "cypress": "15.15.0",
     "eslint-config-prettier": "10.0.1",
     "prettier": "3.6.2"
   }
